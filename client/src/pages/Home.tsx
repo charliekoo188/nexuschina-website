@@ -2,6 +2,7 @@
  * Page: Home - Landing page with video hero
  */
 
+import { useAuth } from "@/_core/hooks/useAuth";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollAnimation from "@/components/ScrollAnimation";
@@ -11,6 +12,10 @@ import { Link } from "wouter";
 import { useEffect, useRef } from "react";
 
 export default function Home() {
+  // The userAuth hooks provides authentication state
+  // To implement login/logout functionality, simply call logout() or redirect to getLoginUrl()
+  let { user, loading, error, isAuthenticated, logout } = useAuth();
+
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -86,13 +91,11 @@ export default function Home() {
             <source src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663326825618/qWPziPqbPoNtmLTN.mp4" type="video/mp4" />
           </video>
 
-          {/* Strong Overlay for Better Readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-charcoal/90 via-charcoal/85 to-charcoal/90"></div>
+          {/* Gradient Overlay - Transparent Top, Dark Bottom */}
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-charcoal/30 to-charcoal/85"></div>
 
           {/* Hero Content */}
           <div className="relative z-10 container text-center text-ivory px-4">
-            {/* Enhanced Text Background Mask - Full Coverage */}
-            <div className="absolute bg-charcoal/70 backdrop-blur-lg rounded-3xl -z-10 shadow-2xl" style={{ top: '-3rem', bottom: '-3rem', left: '50%', transform: 'translateX(-50%)', width: 'calc(100% + 4rem)', maxWidth: '1200px' }}></div>
             <p className="text-sm font-medium tracking-[0.3em] uppercase mb-6 text-champagne fade-in-up">
               WHERE FUTURE LEADERS MEET MODERN CHINA
             </p>

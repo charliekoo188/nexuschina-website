@@ -10,14 +10,15 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
-
+import Insights from "./pages/Insights";
 
 function Router() {
+  // make sure to consider if you need authentication for certain routes
   return (
     <Switch>
       <Route path={"/"} component={Home} />
-      <Route path={"/about"} component={About} />
-      <Route path={"/programs"} component={Programs} />
+      <Route path={"/insights"} component={Insights} />
+      <Route path={"/404"} component={NotFound} />      <Route path={"/programs"} component={Programs} />
       <Route path={"/experience"} component={Experience} />
       <Route path={"/resources"} component={Resources} />
       <Route path={"/contact"} component={Contact} />

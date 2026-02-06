@@ -25,6 +25,7 @@ export default function Navbar() {
     { path: "/programs", label: "PROGRAMS" },
     { path: "/experience", label: "EXPERIENCE" },
     { path: "/resources", label: "RESOURCES" },
+    { path: "/insights", label: "INSIGHTS" },
     { path: "/contact", label: "CONTACT" }
   ];
 
