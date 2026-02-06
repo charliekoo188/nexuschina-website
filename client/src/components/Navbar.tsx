@@ -1,93 +1,138 @@
-/* NEXUS CHINA Design System
- * Component: Navbar - Fixed navigation with transparent backdrop blur
- * Style: Modern Luxury - Restrained elegance
+/* NEXUS CHINA Design System V2
+ * Component: Navbar - Luxury minimalist navigation
  */
 
-import { Menu, X } from "lucide-react";
-import { useState } from "react";
 import { Link, useLocation } from "wouter";
+import { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
   const [location] = useLocation();
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const navLinks = [
-    { href: "/", label: "Home" },
-    { href: "/about", label: "About" },
-    { href: "/programs", label: "Programs" },
-    { href: "/experience", label: "Experience" },
-    { href: "/contact", label: "Contact" },
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const navItems = [
+    { path: "/", label: "HOME" },
+    { path: "/about", label: "ABOUT" },
+    { path: "/programs", label: "PROGRAMS" },
+    { path: "/experience", label: "EXPERIENCE" },
+    { path: "/resources", label: "RESOURCES" },
+    { path: "/contact", label: "CONTACT" }
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        isScrolled
+          ? "bg-ivory/95 backdrop-blur-md shadow-sm"
+          : "bg-transparent"
+      }`}
+    >
       <div className="container">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/">
-            <a className="flex items-center space-x-3 transition-luxury hover:opacity-80">
-              <div className="text-2xl font-bold tracking-tight" style={{ fontFamily: "'Playfair Display', serif" }}>
-                <span className="text-[rgb(var(--color-teal))]">NEXUS</span>
-                <span className="text-[rgb(var(--color-gold))]"> CHINA</span>
-              </div>
-            </a>
+            <div className="cursor-pointer">
+              <h1
+                className={`text-2xl font-medium tracking-wider transition-colors duration-300 ${
+                  isScrolled ? "text-charcoal" : "text-champagne"
+                }`}
+                style={{ fontFamily: "'Cormorant Garamond', serif" }}
+              >
+                NEXUS CHINA
+              </h1>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <Link key={link.href} href={link.href}>
-                <a
-                  className={`text-sm font-medium tracking-wide uppercase transition-luxury ${
-                    location === link.href
-                      ? "text-[rgb(var(--color-gold))]"
-                      : "text-foreground hover:text-[rgb(var(--color-gold))]"
+          <div className="hidden lg:flex items-center space-x-8">
+            {navItems.map((item) => (
+              <Link key={item.path} href={item.path}>
+                <button
+                  className={`text-xs font-medium tracking-widest transition-all duration-300 relative group ${
+                    location === item.path
+                      ? isScrolled
+                        ? "text-charcoal"
+                        : "text-champagne"
+                      : isScrolled
+                      ? "text-warm-gray hover:text-charcoal"
+                      : "text-ivory/80 hover:text-champagne"
                   }`}
                 >
-                  {link.label}
-                </a>
+                  {item.label}
+                  <span
+                    className={`absolute bottom-0 left-0 w-full h-px transition-transform duration-300 ${
+                      location === item.path
+                        ? "scale-x-100 bg-champagne"
+                        : "scale-x-0 group-hover:scale-x-100 bg-champagne"
+                    }`}
+                  ></span>
+                </button>
               </Link>
             ))}
-            
-            {/* Language Toggle */}
-            <button className="text-sm font-medium tracking-wide uppercase text-muted-foreground hover:text-[rgb(var(--color-gold))] transition-luxury">
+            <button
+              className={`text-xs font-medium tracking-widest transition-colors duration-300 ${
+                isScrolled
+                  ? "text-warm-gray hover:text-charcoal"
+                  : "text-ivory/80 hover:text-champagne"
+              }`}
+            >
               EN / 中文
             </button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 text-foreground hover:text-[rgb(var(--color-gold))] transition-luxury"
-            aria-label="Toggle menu"
+            className="lg:hidden"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMobileMenuOpen ? (
+              <X
+                size={24}
+                className={isScrolled ? "text-charcoal" : "text-champagne"}
+              />
+            ) : (
+              <Menu
+                size={24}
+                className={isScrolled ? "text-charcoal" : "text-champagne"}
+              />
+            )}
           </button>
         </div>
+      </div>
 
-        {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="md:hidden py-6 space-y-4 border-t border-border">
-            {navLinks.map((link) => (
-              <Link key={link.href} href={link.href}>
-                <a
-                  onClick={() => setIsOpen(false)}
-                  className={`block text-sm font-medium tracking-wide uppercase transition-luxury ${
-                    location === link.href
-                      ? "text-[rgb(var(--color-gold))]"
-                      : "text-foreground hover:text-[rgb(var(--color-gold))]"
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="lg:hidden bg-ivory border-t border-border">
+          <div className="container py-6 space-y-4">
+            {navItems.map((item) => (
+              <Link key={item.path} href={item.path}>
+                <button
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`block w-full text-left text-sm font-medium tracking-wider transition-colors ${
+                    location === item.path
+                      ? "text-charcoal"
+                      : "text-warm-gray hover:text-charcoal"
                   }`}
                 >
-                  {link.label}
-                </a>
+                  {item.label}
+                </button>
               </Link>
             ))}
-            <button className="block text-sm font-medium tracking-wide uppercase text-muted-foreground hover:text-[rgb(var(--color-gold))] transition-luxury">
+            <button className="block w-full text-left text-sm font-medium tracking-wider text-warm-gray hover:text-charcoal transition-colors">
               EN / 中文
             </button>
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </nav>
   );
 }

@@ -1,124 +1,166 @@
-/* NEXUS CHINA Design System
- * Component: Footer - Multi-column layout with contact information
- * Style: Modern Luxury - Restrained elegance
+/* NEXUS CHINA Design System V2
+ * Component: Footer - Luxury minimalist footer
  */
 
-import { Mail, Phone, MapPin, Instagram, Linkedin, Youtube } from "lucide-react";
 import { Link } from "wouter";
+import { Mail, Phone, MapPin, Instagram, Linkedin, Twitter } from "lucide-react";
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
+  const footerLinks = {
+    programs: [
+      { label: "Tech Innovation", href: "/programs" },
+      { label: "Business & Culture", href: "/programs" },
+      { label: "Sustainability", href: "/programs" },
+      { label: "Custom Programs", href: "/programs" }
+    ],
+    company: [
+      { label: "About Us", href: "/about" },
+      { label: "Our Resources", href: "/resources" },
+      { label: "Experience", href: "/experience" },
+      { label: "Contact", href: "/contact" }
+    ],
+    resources: [
+      { label: "Technology Partners", href: "/resources" },
+      { label: "Academic Institutions", href: "/resources" },
+      { label: "Healthcare Access", href: "/resources" },
+      { label: "Cultural Heritage", href: "/resources" }
+    ]
+  };
+
   return (
-    <footer className="bg-[rgb(var(--color-teal))] text-[rgb(var(--color-ivory))]">
-      <div className="container py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          {/* About Us */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4 text-[rgb(var(--color-gold))]" style={{ fontFamily: "'Playfair Display', serif" }}>
-              About NEXUS CHINA
-            </h3>
-            <p className="text-sm leading-relaxed opacity-90">
-              Connecting global future leaders with the heart of 21st-century innovation through exclusive, transformative China immersion experiences.
+    <footer className="bg-charcoal text-ivory">
+      <div className="container">
+        {/* Main Footer Content */}
+        <div className="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
+          {/* Brand Column */}
+          <div className="lg:col-span-2">
+            <h2 
+              className="text-3xl font-medium mb-4 text-champagne"
+              style={{ fontFamily: "'Cormorant Garamond', serif" }}
+            >
+              NEXUS CHINA
+            </h2>
+            <p className="text-sm leading-relaxed opacity-80 mb-6">
+              Where Future Leaders Meet Modern China. Exclusive immersion programs connecting global elites with China's innovation ecosystem.
             </p>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4 text-[rgb(var(--color-gold))]" style={{ fontFamily: "'Playfair Display', serif" }}>
-              Quick Links
-            </h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link href="/about">
-                  <a className="hover:text-[rgb(var(--color-gold))] transition-luxury">About Us</a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/programs">
-                  <a className="hover:text-[rgb(var(--color-gold))] transition-luxury">Programs</a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/experience">
-                  <a className="hover:text-[rgb(var(--color-gold))] transition-luxury">Experience</a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact">
-                  <a className="hover:text-[rgb(var(--color-gold))] transition-luxury">Contact</a>
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Contact Us */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4 text-[rgb(var(--color-gold))]" style={{ fontFamily: "'Playfair Display', serif" }}>
-              Contact Us
-            </h3>
-            <ul className="space-y-3 text-sm">
-              <li className="flex items-start space-x-2">
-                <Mail size={16} className="mt-1 flex-shrink-0 text-[rgb(var(--color-gold))]" />
-                <a href="mailto:info@nexuschina.com" className="hover:text-[rgb(var(--color-gold))] transition-luxury">
-                  info@nexuschina.com
-                </a>
-              </li>
-              <li className="flex items-start space-x-2">
-                <Phone size={16} className="mt-1 flex-shrink-0 text-[rgb(var(--color-gold))]" />
-                <span>+44 20 1234 5678</span>
-              </li>
-              <li className="flex items-start space-x-2">
-                <MapPin size={16} className="mt-1 flex-shrink-0 text-[rgb(var(--color-gold))]" />
+            <div className="space-y-3">
+              <div className="flex items-center space-x-3 text-sm opacity-80 hover:opacity-100 transition-opacity">
+                <Mail size={16} className="text-champagne" />
+                <a href="mailto:info@nexuschina.com">info@nexuschina.com</a>
+              </div>
+              <div className="flex items-center space-x-3 text-sm opacity-80 hover:opacity-100 transition-opacity">
+                <Phone size={16} className="text-champagne" />
+                <a href="tel:+442012345678">+44 20 1234 5678</a>
+              </div>
+              <div className="flex items-center space-x-3 text-sm opacity-80">
+                <MapPin size={16} className="text-champagne" />
                 <span>London | Beijing | Shanghai</span>
-              </li>
+              </div>
+            </div>
+          </div>
+          {/* Programs Column */}
+          <div>
+            <h3 className="text-sm font-medium tracking-wider uppercase mb-4 text-champagne">
+              Programs
+            </h3>
+            <ul className="space-y-2">
+              {footerLinks.programs.map((link, index) => (
+                <li key={index}>
+                  <Link href={link.href}>
+                    <a className="text-sm opacity-80 hover:opacity-100 hover:text-champagne transition-all">
+                      {link.label}
+                    </a>
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Follow Us */}
+          {/* Company Column */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-[rgb(var(--color-gold))]" style={{ fontFamily: "'Playfair Display', serif" }}>
-              Follow Us
+            <h3 className="text-sm font-medium tracking-wider uppercase mb-4 text-champagne">
+              Company
             </h3>
-            <div className="flex space-x-4">
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-[rgb(var(--color-gold))] transition-luxury"
-                aria-label="Instagram"
-              >
-                <Instagram size={20} />
-              </a>
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-[rgb(var(--color-gold))] transition-luxury"
-                aria-label="LinkedIn"
-              >
-                <Linkedin size={20} />
-              </a>
-              <a
-                href="https://youtube.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-[rgb(var(--color-gold))] transition-luxury"
-                aria-label="YouTube"
-              >
-                <Youtube size={20} />
-              </a>
-            </div>
-            <div className="mt-6">
-              <p className="text-xs opacity-75 mb-2">WeChat ID: NexusChina</p>
-              <button className="text-xs uppercase tracking-wide border border-[rgb(var(--color-gold))] text-[rgb(var(--color-gold))] px-4 py-2 hover:bg-[rgb(var(--color-gold))] hover:text-[rgb(var(--color-teal))] transition-luxury">
-                View QR Code
-              </button>
-            </div>
+            <ul className="space-y-2">
+              {footerLinks.company.map((link, index) => (
+                <li key={index}>
+                  <Link href={link.href}>
+                    <a className="text-sm opacity-80 hover:opacity-100 hover:text-champagne transition-all">
+                      {link.label}
+                    </a>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Resources Column */}
+          <div>
+            <h3 className="text-sm font-medium tracking-wider uppercase mb-4 text-champagne">
+              Resources
+            </h3>
+            <ul className="space-y-2">
+              {footerLinks.resources.map((link, index) => (
+                <li key={index}>
+                  <Link href={link.href}>
+                    <a className="text-sm opacity-80 hover:opacity-100 hover:text-champagne transition-all">
+                      {link.label}
+                    </a>
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-[rgb(var(--color-gold))]/20 text-center text-sm opacity-75">
-          <p>&copy; {new Date().getFullYear()} NEXUS CHINA. All rights reserved.</p>
+        <div className="py-6 border-t border-ivory/10">
+          <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
+            {/* Copyright */}
+            <p className="text-xs opacity-60">
+              © {currentYear} NEXUS CHINA. All rights reserved.
+            </p>
+
+            {/* Social Links */}
+            <div className="flex items-center space-x-6">
+              <a 
+                href="https://instagram.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="opacity-60 hover:opacity-100 hover:text-champagne transition-all"
+              >
+                <Instagram size={18} />
+              </a>
+              <a 
+                href="https://linkedin.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="opacity-60 hover:opacity-100 hover:text-champagne transition-all"
+              >
+                <Linkedin size={18} />
+              </a>
+              <a 
+                href="https://twitter.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="opacity-60 hover:opacity-100 hover:text-champagne transition-all"
+              >
+                <Twitter size={18} />
+              </a>
+            </div>
+
+            {/* Legal Links */}
+            <div className="flex items-center space-x-6 text-xs opacity-60">
+              <a href="#" className="hover:opacity-100 hover:text-champagne transition-all">
+                Privacy Policy
+              </a>
+              <a href="#" className="hover:opacity-100 hover:text-champagne transition-all">
+                Terms of Service
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

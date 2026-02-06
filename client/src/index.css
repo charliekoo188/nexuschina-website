@@ -3,11 +3,18 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* NEXUS CHINA Design System V2
+ * Inspired by: Vogue Magazine, The Peninsula Hotels, Rosewood Hotels, Bulgari Hotels
+ * Philosophy: Understated Luxury - Black/White base with Champagne Gold & Rose Gold accents
+ * Typography: Cormorant Garamond (display) + Montserrat (body)
+ * Color Palette: Deep Charcoal, Champagne, Ivory, Rose Gold
+ */
+
 @theme inline {
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
+  --radius-sm: 0;
+  --radius-md: 0;
+  --radius-lg: 0;
+  --radius-xl: 0;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -42,88 +49,97 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
-/* NEXUS CHINA Design System
- * Philosophy: Modern Luxury - Restrained elegance inspired by Peninsula Hotels and Monocle Magazine
- * Core Principles: Depth, Trust, Exclusivity, Sophistication
- * Color Philosophy: Deep Teal (wisdom, depth) + Champagne Gold (luxury, excellence) + Ivory White (purity, openness)
- * Typography: Playfair Display (elegant serif) + Inter (modern sans-serif)
- * Layout: Asymmetric, generous whitespace, visual hierarchy
- */
-
 :root {
-  /* Brand Colors */
-  --color-teal: 10 47 47;           /* Deep Teal #0A2F2F - Primary brand color */
-  --color-gold: 212 175 55;         /* Champagne Gold #D4AF37 - Accent color */
-  --color-ivory: 250 250 248;       /* Ivory White #FAFAF8 - Background */
-  --color-warm-gray: 139 134 128;   /* Warm Gray #8B8680 - Muted text */
-  
-  /* Theme Variables */
-  --primary: 10 47 47;              /* Deep Teal */
-  --primary-foreground: 250 250 248; /* Ivory White */
-  --accent: 212 175 55;             /* Champagne Gold */
-  --accent-foreground: 10 47 47;    /* Deep Teal */
-  
-  --radius: 2px;                    /* Minimal border radius for sharp, modern look */
-  
-  --background: 250 250 248;        /* Ivory White */
-  --foreground: 10 47 47;           /* Deep Teal */
-  
-  --card: 255 255 255;              /* Pure White for cards */
-  --card-foreground: 10 47 47;
-  
-  --popover: 255 255 255;
-  --popover-foreground: 10 47 47;
-  
-  --secondary: 245 245 243;         /* Light Gray */
-  --secondary-foreground: 10 47 47;
-  
-  --muted: 245 245 243;
-  --muted-foreground: 139 134 128;  /* Warm Gray */
-  
-  --destructive: 220 38 38;
-  --destructive-foreground: 255 255 255;
-  
-  --border: 229 229 227;            /* Light border */
-  --input: 229 229 227;
-  --ring: 212 175 55;               /* Gold ring for focus */
-  
-  --chart-1: 10 47 47;
-  --chart-2: 212 175 55;
-  --chart-3: 139 134 128;
-  --chart-4: 245 245 243;
-  --chart-5: 255 255 255;
-  
-  --sidebar: 255 255 255;
-  --sidebar-foreground: 10 47 47;
-  --sidebar-primary: 10 47 47;
-  --sidebar-primary-foreground: 250 250 248;
-  --sidebar-accent: 245 245 243;
-  --sidebar-accent-foreground: 10 47 47;
-  --sidebar-border: 229 229 227;
-  --sidebar-ring: 212 175 55;
+  /* Custom Color Variables - Luxury Palette */
+  --color-charcoal: 26, 26, 26;        /* Deep Charcoal #1A1A1A */
+  --color-champagne: 244, 228, 193;    /* Champagne #F4E4C1 */
+  --color-ivory: 253, 251, 247;        /* Ivory #FDFBF7 */
+  --color-rose-gold: 183, 110, 121;    /* Rose Gold #B76E79 */
+  --color-warm-gray: 139, 134, 128;    /* Warm Gray #8B8680 */
+  --color-soft-taupe: 201, 184, 168;   /* Soft Taupe #C9B8A8 */
+  --color-burgundy: 92, 26, 26;        /* Deep Burgundy #5C1A1A */
+
+  /* Shadcn Theme Variables */
+  --primary: oklch(0.15 0.01 0);
+  --primary-foreground: oklch(0.98 0.01 90);
+  --sidebar-primary: oklch(0.15 0.01 0);
+  --sidebar-primary-foreground: oklch(0.98 0.01 90);
+  --chart-1: oklch(0.7 0.05 60);
+  --chart-2: oklch(0.6 0.05 60);
+  --chart-3: oklch(0.5 0.05 60);
+  --chart-4: oklch(0.4 0.05 60);
+  --chart-5: oklch(0.3 0.05 60);
+  --radius: 0rem;
+  --background: oklch(0.99 0.005 90);
+  --foreground: oklch(0.15 0.01 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.15 0.01 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.15 0.01 0);
+  --secondary: oklch(0.96 0.005 90);
+  --secondary-foreground: oklch(0.2 0.01 0);
+  --muted: oklch(0.94 0.005 90);
+  --muted-foreground: oklch(0.45 0.01 0);
+  --accent: oklch(0.96 0.02 60);
+  --accent-foreground: oklch(0.15 0.01 0);
+  --destructive: oklch(0.5 0.2 20);
+  --destructive-foreground: oklch(0.99 0.005 90);
+  --border: oklch(0.88 0.005 90);
+  --input: oklch(0.88 0.005 90);
+  --ring: oklch(0.15 0.01 0);
+  --sidebar: oklch(0.99 0.005 90);
+  --sidebar-foreground: oklch(0.15 0.01 0);
+  --sidebar-accent: oklch(0.96 0.005 90);
+  --sidebar-accent-foreground: oklch(0.15 0.01 0);
+  --sidebar-border: oklch(0.88 0.005 90);
+  --sidebar-ring: oklch(0.15 0.01 0);
+}
+
+.dark {
+  --primary: oklch(0.98 0.01 90);
+  --primary-foreground: oklch(0.15 0.01 0);
+  --sidebar-primary: oklch(0.98 0.01 90);
+  --sidebar-primary-foreground: oklch(0.15 0.01 0);
+  --background: oklch(0.15 0.01 0);
+  --foreground: oklch(0.95 0.005 90);
+  --card: oklch(0.18 0.01 0);
+  --card-foreground: oklch(0.95 0.005 90);
+  --popover: oklch(0.18 0.01 0);
+  --popover-foreground: oklch(0.95 0.005 90);
+  --secondary: oklch(0.22 0.01 0);
+  --secondary-foreground: oklch(0.85 0.005 90);
+  --muted: oklch(0.25 0.01 0);
+  --muted-foreground: oklch(0.65 0.01 0);
+  --accent: oklch(0.25 0.02 60);
+  --accent-foreground: oklch(0.95 0.005 90);
+  --destructive: oklch(0.5 0.2 20);
+  --destructive-foreground: oklch(0.99 0.005 90);
+  --border: oklch(0.3 0.01 0);
+  --input: oklch(0.3 0.01 0);
+  --ring: oklch(0.98 0.01 90);
+  --chart-1: oklch(0.7 0.05 60);
+  --chart-2: oklch(0.6 0.05 60);
+  --chart-3: oklch(0.5 0.05 60);
+  --chart-4: oklch(0.4 0.05 60);
+  --chart-5: oklch(0.3 0.05 60);
+  --sidebar: oklch(0.18 0.01 0);
+  --sidebar-foreground: oklch(0.95 0.005 90);
+  --sidebar-accent: oklch(0.25 0.01 0);
+  --sidebar-accent-foreground: oklch(0.95 0.005 90);
+  --sidebar-border: oklch(0.3 0.01 0);
+  --sidebar-ring: oklch(0.98 0.01 90);
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
-  
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 400;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: 0.01em;
   }
-  
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', 'Source Han Serif CN', serif;
-    font-weight: 500;
-    letter-spacing: -0.02em;
-    line-height: 1.2;
-  }
-  
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
   [type="button"]:not(:disabled),
@@ -135,16 +151,22 @@
   input[type="radio"]:not(:disabled) {
     @apply cursor-pointer;
   }
+
+  /* Typography Hierarchy */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
 }
 
 @layer components {
-  /* Container utility with responsive padding */
   .container {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 
   .flex {
@@ -154,94 +176,229 @@
 
   @media (min-width: 640px) {
     .container {
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
+      padding-left: 2rem;
+      padding-right: 2rem;
     }
   }
 
   @media (min-width: 1024px) {
     .container {
-      padding-left: 2rem;
-      padding-right: 2rem;
-      max-width: 1280px;
+      padding-left: 3rem;
+      padding-right: 3rem;
+      max-width: 1400px;
     }
   }
-  
+
   /* Luxury Design Utilities */
   .section-padding {
-    padding: 120px 0;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
   }
-  
-  @media (max-width: 768px) {
+
+  @media (min-width: 1024px) {
     .section-padding {
-      padding: 80px 0;
+      padding-top: 8rem;
+      padding-bottom: 8rem;
     }
   }
-  
-  .gold-divider {
+
+  /* Luxury Divider */
+  .luxury-divider {
     width: 80px;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, rgb(var(--color-gold)), transparent);
-    margin: 24px auto;
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgb(var(--color-champagne)),
+      transparent
+    );
+    margin: 2rem auto;
   }
-  
-  /* Luxury Button Styles */
+
+  /* Luxury Buttons */
   .btn-luxury {
-    padding: 16px 48px;
-    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.875rem;
     font-weight: 500;
-    border-radius: 2px;
-    transition: all 300ms ease;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    font-family: 'Inter', sans-serif;
+    padding: 1rem 2.5rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
   }
-  
+
+  .btn-luxury::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      transparent
+    );
+    transition: left 0.6s ease;
+  }
+
+  .btn-luxury:hover::before {
+    left: 100%;
+  }
+
   .btn-luxury-primary {
-    background: rgb(var(--color-gold));
-    color: rgb(var(--color-teal));
-    border: 1px solid rgb(var(--color-gold));
+    background-color: rgb(var(--color-charcoal));
+    color: rgb(var(--color-champagne));
+    border: 1px solid rgb(var(--color-charcoal));
   }
-  
+
   .btn-luxury-primary:hover {
-    background: transparent;
-    color: rgb(var(--color-gold));
-    box-shadow: 0 0 30px rgba(var(--color-gold), 0.3);
+    background-color: transparent;
+    color: rgb(var(--color-charcoal));
+    border: 1px solid rgb(var(--color-charcoal));
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   }
-  
+
   .btn-luxury-secondary {
-    background: transparent;
-    color: rgb(var(--color-gold));
-    border: 1px solid rgb(var(--color-gold));
+    background-color: transparent;
+    color: rgb(var(--color-charcoal));
+    border: 1px solid rgb(var(--color-charcoal));
   }
-  
+
   .btn-luxury-secondary:hover {
-    background: rgb(var(--color-gold));
-    color: rgb(var(--color-teal));
-    box-shadow: 0 0 30px rgba(var(--color-gold), 0.3);
+    background-color: rgb(var(--color-charcoal));
+    color: rgb(var(--color-champagne));
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   }
-  
-  /* Smooth Transitions */
-  .transition-luxury {
-    transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Luxury Card */
+  .luxury-card {
+    background: rgb(var(--color-ivory));
+    border: 1px solid rgba(var(--color-warm-gray), 0.2);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .luxury-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+    border-color: rgba(var(--color-champagne), 0.5);
+  }
+
+  /* Luxury Text Effects */
+  .text-champagne {
+    color: rgb(var(--color-champagne));
+  }
+
+  .text-rose-gold {
+    color: rgb(var(--color-rose-gold));
+  }
+
+  .text-charcoal {
+    color: rgb(var(--color-charcoal));
+  }
+
+  .bg-champagne {
+    background-color: rgb(var(--color-champagne));
+  }
+
+  .bg-charcoal {
+    background-color: rgb(var(--color-charcoal));
+  }
+
+  .bg-ivory {
+    background-color: rgb(var(--color-ivory));
+  }
+
+  /* Luxury Gradient Overlay */
+  .luxury-overlay {
+    position: relative;
+  }
+
+  .luxury-overlay::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(var(--color-charcoal), 0.85) 0%,
+      rgba(var(--color-charcoal), 0.6) 50%,
+      rgba(var(--color-charcoal), 0.85) 100%
+    );
+    z-index: 1;
+  }
+
+  .luxury-overlay > * {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Parallax Effect */
+  .parallax-slow {
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Fade In Animation */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .fade-in-up {
+    animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  /* Shimmer Effect */
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(var(--color-champagne), 0.3) 50%,
+      transparent 100%
+    );
+    background-size: 1000px 100%;
+    animation: shimmer 3s infinite;
+  }
+
+  /* Luxury Line */
+  .luxury-line {
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgb(var(--color-rose-gold)),
+      rgb(var(--color-champagne)),
+      rgb(var(--color-rose-gold)),
+      transparent
+    );
   }
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
 }
 
-::-webkit-scrollbar-track {
-  background: rgb(var(--color-ivory));
-}
-
-::-webkit-scrollbar-thumb {
-  background: rgb(var(--color-warm-gray));
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: rgb(var(--color-teal));
+/* Selection Color */
+::selection {
+  background-color: rgb(var(--color-champagne));
+  color: rgb(var(--color-charcoal));
 }
