@@ -91,24 +91,35 @@ export default function Home() {
             <source src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663326825618/qWPziPqbPoNtmLTN.mp4" type="video/mp4" />
           </video>
 
-          {/* Gradient Overlay - Transparent Top, Dark Bottom */}
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-charcoal/30 to-charcoal/85"></div>
+          {/* Subtle Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/10 to-black/30"></div>
 
           {/* Hero Content */}
-          <div className="relative z-10 container text-center text-ivory px-4">
-            <p className="text-sm font-medium tracking-[0.3em] uppercase mb-6 text-champagne fade-in-up">
-              WHERE FUTURE LEADERS MEET MODERN CHINA
-            </p>
-            <h1 
-              className="text-5xl md:text-7xl lg:text-8xl font-medium mb-8 fade-in-up"
-              style={{ fontFamily: "'Cormorant Garamond', serif", animationDelay: "0.2s" }}
-            >
-              Experience the<br />
-              <span className="text-champagne">Future of Innovation</span>
-            </h1>
-            <p className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed mb-12 opacity-90 fade-in-up" style={{ animationDelay: "0.4s" }}>
-              Exclusive China immersion programs for elite students from Oxford, Cambridge, Imperial, and top UK private schools. Discover cutting-edge technology, world-class enterprises, premier academic institutions, and contemporary culture.
-            </p>
+          <div className="relative z-10 container text-center px-4">
+            {/* Tagline with cream background */}
+            <div className="inline-block bg-[#F5F1E8] px-8 py-3 mb-6 fade-in-up">
+              <p className="text-xs md:text-sm font-medium tracking-[0.3em] uppercase text-charcoal">
+                WHERE FUTURE LEADERS MEET MODERN CHINA
+              </p>
+            </div>
+            
+            {/* Main Title with cream background */}
+            <div className="bg-[#F5F1E8] px-8 md:px-16 py-8 md:py-12 mb-6 fade-in-up" style={{ animationDelay: "0.2s" }}>
+              <h1 
+                className="text-4xl md:text-6xl lg:text-7xl font-medium text-charcoal leading-tight"
+                style={{ fontFamily: "'Cormorant Garamond', serif" }}
+              >
+                Experience the<br />
+                Future of Innovation
+              </h1>
+            </div>
+
+            {/* Description with cream background */}
+            <div className="bg-[#F5F1E8] px-8 md:px-12 py-6 max-w-4xl mx-auto mb-12 fade-in-up" style={{ animationDelay: "0.4s" }}>
+              <p className="text-base md:text-lg leading-relaxed text-charcoal">
+                Exclusive China immersion programs for elite students from Oxford, Cambridge, Imperial, and top UK private schools. Discover cutting-edge technology, world-class enterprises, premier academic institutions, and contemporary culture.
+              </p>
+            </div>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 fade-in-up" style={{ animationDelay: "0.6s" }}>
               <Link href="/programs">
                 <button className="btn-luxury btn-luxury-primary">
