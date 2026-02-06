@@ -4,6 +4,7 @@
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ScrollAnimation from "@/components/ScrollAnimation";
 import { ArrowRight, Building2, GraduationCap, Heart, Landmark, Users, Globe } from "lucide-react";
 import { Link } from "wouter";
 import { useEffect, useRef } from "react";
@@ -78,13 +79,13 @@ export default function Home() {
             <source src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663326825618/qWPziPqbPoNtmLTN.mp4" type="video/mp4" />
           </video>
 
-          {/* Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-charcoal/80 via-charcoal/60 to-charcoal/80"></div>
+          {/* Strong Overlay for Better Readability */}
+          <div className="absolute inset-0 bg-gradient-to-b from-charcoal/90 via-charcoal/85 to-charcoal/90"></div>
 
           {/* Hero Content */}
           <div className="relative z-10 container text-center text-ivory px-4">
-            {/* Text Background Mask for Better Contrast */}
-            <div className="absolute inset-0 bg-charcoal/40 backdrop-blur-sm rounded-lg -z-10 mx-auto" style={{ maxWidth: '1000px', left: '50%', transform: 'translateX(-50%)' }}></div>
+            {/* Enhanced Text Background Mask */}
+            <div className="absolute inset-0 bg-charcoal/60 backdrop-blur-md rounded-2xl -z-10 mx-auto shadow-2xl" style={{ maxWidth: '1100px', left: '50%', transform: 'translateX(-50%)', padding: '3rem' }}></div>
             <p className="text-sm font-medium tracking-[0.3em] uppercase mb-6 text-champagne fade-in-up">
               WHERE FUTURE LEADERS MEET MODERN CHINA
             </p>
@@ -125,17 +126,19 @@ export default function Home() {
           <div className="container">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
               {stats.map((stat, index) => (
-                <div key={index} className="fade-in-up" style={{ animationDelay: `${index * 0.1}s` }}>
-                  <p 
-                    className="text-5xl md:text-6xl font-medium mb-2 text-rose-gold"
-                    style={{ fontFamily: "'Cormorant Garamond', serif" }}
-                  >
-                    {stat.number}
-                  </p>
-                  <p className="text-sm font-medium tracking-wider uppercase text-warm-gray">
-                    {stat.label}
-                  </p>
-                </div>
+                <ScrollAnimation key={index} animation="fade-up" delay={index * 0.1}>
+                  <div>
+                    <p 
+                      className="text-5xl md:text-6xl font-medium mb-2 text-rose-gold"
+                      style={{ fontFamily: "'Cormorant Garamond', serif" }}
+                    >
+                      {stat.number}
+                    </p>
+                    <p className="text-sm font-medium tracking-wider uppercase text-warm-gray">
+                      {stat.label}
+                    </p>
+                  </div>
+                </ScrollAnimation>
               ))}
             </div>
           </div>
@@ -144,38 +147,39 @@ export default function Home() {
         {/* Features Grid */}
         <section className="section-padding bg-white">
           <div className="container max-w-6xl">
-            <div className="text-center mb-16">
-              <h2 
-                className="text-4xl md:text-5xl font-medium mb-4 text-charcoal"
-                style={{ fontFamily: "'Cormorant Garamond', serif" }}
-              >
-                Unparalleled Access
-              </h2>
-              <div className="luxury-divider"></div>
-              <p className="text-lg text-warm-gray max-w-2xl mx-auto">
-                NEXUS CHINA opens doors to China's most prestigious institutions and innovative enterprises, providing experiences unavailable through conventional channels.
-              </p>
-            </div>
+            <ScrollAnimation animation="fade-up">
+              <div className="text-center mb-16">
+                <h2 
+                  className="text-4xl md:text-5xl font-medium mb-4 text-charcoal"
+                  style={{ fontFamily: "'Cormorant Garamond', serif" }}
+                >
+                  Unparalleled Access
+                </h2>
+                <div className="luxury-divider"></div>
+                <p className="text-lg text-warm-gray max-w-2xl mx-auto">
+                  NEXUS CHINA opens doors to China's most prestigious institutions and innovative enterprises, providing experiences unavailable through conventional channels.
+                </p>
+              </div>
+            </ScrollAnimation>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {features.map((feature, index) => (
-                <div 
-                  key={index}
-                  className="luxury-card p-8 text-center group"
-                >
-                  <div className="w-16 h-16 bg-champagne mx-auto mb-6 flex items-center justify-center group-hover:bg-rose-gold transition-colors duration-500">
-                    <feature.icon size={28} className="text-charcoal" />
-                  </div>
-                  <h3 
+                <ScrollAnimation key={index} animation="fade-up" delay={index * 0.1}>
+                  <div className="luxury-card p-8 text-center group">
+                    <div className="w-16 h-16 bg-champagne mx-auto mb-6 flex items-center justify-center group-hover:bg-rose-gold transition-colors duration-500">
+                      <feature.icon size={28} className="text-charcoal" />
+                    </div>
+                    <h3 
                     className="text-xl font-medium mb-3 text-charcoal"
                     style={{ fontFamily: "'Cormorant Garamond', serif" }}
                   >
                     {feature.title}
                   </h3>
-                  <p className="text-sm leading-relaxed text-warm-gray">
-                    {feature.description}
-                  </p>
-                </div>
+                    <p className="text-sm leading-relaxed text-warm-gray">
+                      {feature.description}
+                    </p>
+                  </div>
+                </ScrollAnimation>
               ))}
             </div>
           </div>

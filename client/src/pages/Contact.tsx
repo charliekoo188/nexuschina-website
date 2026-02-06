@@ -2,6 +2,7 @@
  * Page: Contact - Contact form and information
  */
 
+import ScrollAnimation from "@/components/ScrollAnimation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";

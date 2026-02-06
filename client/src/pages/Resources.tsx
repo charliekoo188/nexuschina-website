@@ -2,6 +2,7 @@
  * Page: Resources - Showcase our exclusive access to China's top institutions
  */
 
+import ScrollAnimation from "@/components/ScrollAnimation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Building2, GraduationCap, Heart, Landmark, ArrowRight } from "lucide-react";

@@ -2,6 +2,7 @@
  * Page: About - Mission, vision, and team
  */
 
+import ScrollAnimation from "@/components/ScrollAnimation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Target, Eye, Heart, Award } from "lucide-react";

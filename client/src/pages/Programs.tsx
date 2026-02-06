@@ -2,6 +2,7 @@
  * Page: Programs - Showcase different program offerings
  */
 
+import ScrollAnimation from "@/components/ScrollAnimation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ArrowRight, Calendar, Users, MapPin, Check } from "lucide-react";
@@ -216,6 +217,72 @@ export default function Programs() {
                   <span className="text-lg text-muted-foreground">{item}</span>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="section-padding bg-white">
+          <div className="container max-w-4xl">
+            <h2 
+              className="text-4xl font-medium mb-12 text-charcoal text-center"
+              style={{ fontFamily: "'Cormorant Garamond', serif" }}
+            >
+              Frequently Asked Questions
+            </h2>
+            <div className="luxury-divider mb-12"></div>
+            <div className="space-y-6">
+              {[
+                {
+                  question: "Who can apply for NEXUS CHINA programs?",
+                  answer: "Our programs are designed for students from Oxford, Cambridge, Imperial College London, and other top UK universities, as well as students from leading UK private schools (ages 16+). We seek intellectually curious individuals with a genuine interest in understanding contemporary China."
+                },
+                {
+                  question: "What is the typical group size?",
+                  answer: "We maintain small group sizes of 10-16 participants to ensure personalized attention, meaningful interactions, and exclusive access. This intimate setting allows for deeper engagement with hosts and fellow participants."
+                },
+                {
+                  question: "Do I need to speak Mandarin?",
+                  answer: "No Mandarin language skills are required. All programs include expert English-speaking guides and translators. However, basic Mandarin phrases are encouraged and we provide a language primer before departure."
+                },
+                {
+                  question: "What is the application process?",
+                  answer: "The application process includes: (1) Submit online application form, (2) Video interview with our team, (3) Review of academic background and interests, (4) Final acceptance notification. We recommend applying 3-4 months before your preferred program date."
+                },
+                {
+                  question: "What is included in the program fee?",
+                  answer: "The program fee covers all accommodation in 5-star hotels, private transportation, all meals, exclusive enterprise visits, expert guides, networking events, cultural activities, and program materials. International flights and personal expenses are not included."
+                },
+                {
+                  question: "Can programs be customized?",
+                  answer: "Absolutely. We specialize in creating bespoke programs tailored to your specific interests, academic focus, or organizational needs. Whether you're interested in fintech, AI, sustainability, or cultural heritage, we'll design an exclusive experience for your group."
+                },
+                {
+                  question: "What safety measures are in place?",
+                  answer: "Participant safety is our top priority. We provide 24/7 on-ground support, comprehensive travel insurance, secure accommodations, vetted transportation, and emergency protocols. Our team has extensive experience managing international programs in China."
+                },
+                {
+                  question: "When are programs offered?",
+                  answer: "We offer programs year-round, with peak seasons during university breaks (summer, winter, and spring). Custom programs can be scheduled at your convenience with at least 2 months advance notice."
+                }
+              ].map((faq, index) => (
+                <div key={index} className="luxury-card p-6">
+                  <h3 className="text-xl font-medium mb-3 text-charcoal" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+                    {faq.question}
+                  </h3>
+                  <p className="text-warm-gray leading-relaxed">
+                    {faq.answer}
+                  </p>
+                </div>
+              ))}
+            </div>
+            <div className="text-center mt-12">
+              <p className="text-lg text-warm-gray mb-6">Still have questions?</p>
+              <Link href="/contact">
+                <button className="btn-luxury btn-luxury-primary">
+                  CONTACT US <ArrowRight className="inline ml-2" size={18} />
+                </button>
+              </Link>
             </div>
           </div>
         </section>

@@ -2,6 +2,7 @@
  * Page: Experience - Testimonials and gallery
  */
 
+import ScrollAnimation from "@/components/ScrollAnimation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Quote } from "lucide-react";
