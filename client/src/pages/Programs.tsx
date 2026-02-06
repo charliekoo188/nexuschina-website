@@ -3,12 +3,29 @@
  */
 
 import ScrollAnimation from "@/components/ScrollAnimation";
+import SEO from "@/components/SEO";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ArrowRight, Calendar, Users, MapPin, Check } from "lucide-react";
 import { Link } from "wouter";
 
 export default function Programs() {
+  return (
+    <div className="min-h-screen flex flex-col">
+      <SEO 
+        title="Programs"
+        description="Explore NEXUS CHINA's exclusive immersion programs: Tech Innovation, Academic Excellence, and Cultural Heritage. Customized experiences for elite UK students featuring enterprise visits, university engagement, and cultural immersion."
+        keywords="China tech program, China academic program, China cultural program, UK student programs China, enterprise visits China, university exchange China"
+        canonical="https://nexuschina.com/programs"
+      />
+      <Navbar />
+      <ProgramsContent />
+      <Footer />
+    </div>
+  );
+}
+
+function ProgramsContent() {
   const programs = [
     {
       title: "Tech Innovation Immersion",
@@ -66,8 +83,7 @@ export default function Programs() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <Navbar />
+    <>
       
       <main className="pt-20">
         {/* Hero Section */}
@@ -287,8 +303,7 @@ export default function Programs() {
           </div>
         </section>
       </main>
-
-      <Footer />
-    </div>
+    </>
   );
 }
+

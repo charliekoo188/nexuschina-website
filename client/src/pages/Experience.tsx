@@ -3,9 +3,11 @@
  */
 
 import ScrollAnimation from "@/components/ScrollAnimation";
+import SEO from "@/components/SEO";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Quote } from "lucide-react";
+import { Link } from "wouter";
 
 export default function Experience() {
   const testimonials = [
@@ -68,6 +70,12 @@ export default function Experience() {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO
+        title="Experience"
+        description="Discover what past participants say about NEXUS CHINA programs. View testimonials and success stories from Oxford, Cambridge, and Imperial students."
+        keywords="NEXUS CHINA reviews, student testimonials China, program experience"
+        canonical="https://nexuschina.com/experience"
+      />
       <Navbar />
       
       <main className="pt-20">
@@ -219,6 +227,164 @@ export default function Experience() {
                   Recommend NEXUS CHINA to peers
                 </p>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Success Stories - New Section */}
+        <section className="section-padding bg-ivory">
+          <div className="container max-w-6xl">
+            <div className="text-center mb-16">
+              <h2 
+                className="text-4xl md:text-5xl font-medium mb-4 text-charcoal"
+                style={{ fontFamily: "'Cormorant Garamond', serif" }}
+              >
+                Success <span className="text-rose-gold">Stories</span>
+              </h2>
+              <div className="luxury-divider"></div>
+              <p className="text-lg text-warm-gray max-w-2xl mx-auto">
+                Meet three alumni whose NEXUS CHINA experience catalyzed remarkable achievements
+              </p>
+            </div>
+
+            <div className="space-y-16">
+              {/* Success Story 1 */}
+              <div className="luxury-card p-8 md:p-12">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  <div className="md:col-span-1">
+                    <img 
+                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" 
+                      alt="Omar Al-Rashid"
+                      className="w-full h-64 object-cover rounded-lg mb-4"
+                    />
+                    <h3 className="text-2xl font-medium text-charcoal mb-2" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+                      Omar Al-Rashid
+                    </h3>
+                    <p className="text-sm text-champagne font-medium mb-1">Imperial College London</p>
+                    <p className="text-sm text-muted-foreground">MEng Computing, Class of 2024</p>
+                    <p className="text-xs text-muted-foreground mt-2">Dubai, UAE → London, UK</p>
+                  </div>
+                  <div className="md:col-span-2">
+                    <div className="mb-6">
+                      <span className="inline-block px-4 py-1 bg-champagne text-charcoal text-xs font-medium uppercase tracking-wide rounded-full mb-4">
+                        Tech Innovation Immersion 2023
+                      </span>
+                      <h4 className="text-xl font-medium text-charcoal mb-3" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+                        From Student to ByteDance AI Research Intern
+                      </h4>
+                    </div>
+                    <div className="space-y-4 text-warm-gray leading-relaxed">
+                      <p>
+                        <strong className="text-charcoal">The Challenge:</strong> Omar was passionate about AI but felt limited by Western-centric perspectives on machine learning research. He wanted exposure to China's rapidly advancing AI ecosystem.
+                      </p>
+                      <p>
+                        <strong className="text-charcoal">The NEXUS Experience:</strong> During the Tech Innovation Immersion program, Omar visited ByteDance's AI Lab in Beijing and engaged in a roundtable with their research team. He presented his own ML project and received direct feedback from senior engineers.
+                      </p>
+                      <p>
+                        <strong className="text-charcoal">The Outcome:</strong> Impressed by Omar's insights and curiosity, ByteDance offered him a summer research internship. He spent 10 weeks in Beijing working on large language model optimization, co-authoring a paper that was accepted to NeurIPS 2024. He now has a full-time offer from ByteDance post-graduation.
+                      </p>
+                      <p className="text-charcoal italic pt-4 border-t border-champagne/30">
+                        "NEXUS CHINA didn't just open doors—it opened my mind to what's possible when East meets West in AI research. The connections I made have shaped my entire career trajectory."
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Success Story 2 */}
+              <div className="luxury-card p-8 md:p-12 bg-charcoal text-ivory">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  <div className="md:col-span-1">
+                    <img 
+                      src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80" 
+                      alt="Amira Hassan"
+                      className="w-full h-64 object-cover rounded-lg mb-4"
+                    />
+                    <h3 className="text-2xl font-medium text-ivory mb-2" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+                      Amira Hassan
+                    </h3>
+                    <p className="text-sm text-champagne font-medium mb-1">University of Oxford</p>
+                    <p className="text-sm text-ivory/70">BA Philosophy, Politics & Economics, Class of 2025</p>
+                    <p className="text-xs text-ivory/70 mt-2">Cairo, Egypt → Oxford, UK</p>
+                  </div>
+                  <div className="md:col-span-2">
+                    <div className="mb-6">
+                      <span className="inline-block px-4 py-1 bg-champagne text-charcoal text-xs font-medium uppercase tracking-wide rounded-full mb-4">
+                        Business & Culture Experience 2024
+                      </span>
+                      <h4 className="text-xl font-medium text-ivory mb-3" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+                        Founding a UK-China Green Energy Investment Platform
+                      </h4>
+                    </div>
+                    <div className="space-y-4 text-ivory/80 leading-relaxed">
+                      <p>
+                        <strong className="text-ivory">The Challenge:</strong> Amira wanted to bridge the gap between Middle Eastern capital and Chinese green tech innovation, but lacked the networks and firsthand knowledge of China's sustainability sector.
+                      </p>
+                      <p>
+                        <strong className="text-ivory">The NEXUS Experience:</strong> Through the program, Amira visited BYD's Shenzhen headquarters, toured solar panel manufacturing facilities, and met with Chinese green energy VCs. She also attended a private dinner with founders of Chinese EV battery startups.
+                      </p>
+                      <p>
+                        <strong className="text-ivory">The Outcome:</strong> Inspired by what she witnessed, Amira co-founded "Silk Energy Partners," a platform connecting UK and Middle Eastern investors with Chinese green tech companies. Within 6 months, she facilitated £2.3M in seed investments. She's now taking a gap year to scale the venture before completing her degree.
+                      </p>
+                      <p className="text-ivory italic pt-4 border-t border-champagne/30">
+                        "NEXUS CHINA gave me the confidence and connections to turn an idea into reality. I saw firsthand that China isn't just the future of green energy—it's the present."
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Success Story 3 */}
+              <div className="luxury-card p-8 md:p-12">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  <div className="md:col-span-1">
+                    <img 
+                      src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80" 
+                      alt="Khalid Al-Mansoori"
+                      className="w-full h-64 object-cover rounded-lg mb-4"
+                    />
+                    <h3 className="text-2xl font-medium text-charcoal mb-2" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+                      Khalid Al-Mansoori
+                    </h3>
+                    <p className="text-sm text-champagne font-medium mb-1">Eton College</p>
+                    <p className="text-sm text-muted-foreground">A-Level Student, Class of 2025</p>
+                    <p className="text-xs text-muted-foreground mt-2">Abu Dhabi, UAE → Eton, UK</p>
+                  </div>
+                  <div className="md:col-span-2">
+                    <div className="mb-6">
+                      <span className="inline-block px-4 py-1 bg-champagne text-charcoal text-xs font-medium uppercase tracking-wide rounded-full mb-4">
+                        Custom Program 2024
+                      </span>
+                      <h4 className="text-xl font-medium text-charcoal mb-3" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+                        Accepted to Tsinghua University's Schwarzman Scholars Program
+                      </h4>
+                    </div>
+                    <div className="space-y-4 text-warm-gray leading-relaxed">
+                      <p>
+                        <strong className="text-charcoal">The Challenge:</strong> Khalid was deciding between applying to US Ivy League schools or exploring opportunities in Asia. He wanted to understand whether China could offer the same caliber of education and career prospects.
+                      </p>
+                      <p>
+                        <strong className="text-charcoal">The NEXUS Experience:</strong> We designed a bespoke program for Khalid focused on top-tier Chinese universities. He spent time at Tsinghua, Peking University, and Fudan, attending lectures, meeting professors, and shadowing current students. He also toured Alibaba's Hangzhou campus.
+                      </p>
+                      <p>
+                        <strong className="text-charcoal">The Outcome:</strong> Khalid was so impressed that he applied to Tsinghua's prestigious Schwarzman Scholars Program (acceptance rate: 3%). He was accepted and will begin his Master's in Global Affairs in Beijing this fall, turning down offers from Yale and Stanford. His personal statement directly referenced his NEXUS CHINA experience.
+                      </p>
+                      <p className="text-charcoal italic pt-4 border-t border-champagne/30">
+                        "Before NEXUS CHINA, I saw China as a mystery. After the program, I saw it as my future. Tsinghua is where I belong, and I wouldn't have known that without this experience."
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="text-center mt-16">
+              <p className="text-lg text-warm-gray mb-6">Ready to write your own success story?</p>
+              <Link href="/programs">
+                <button className="btn-luxury btn-luxury-primary">
+                  EXPLORE PROGRAMS
+                </button>
+              </Link>
             </div>
           </div>
         </section>

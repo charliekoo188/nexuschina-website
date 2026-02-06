@@ -3,6 +3,7 @@
  */
 
 import ScrollAnimation from "@/components/ScrollAnimation";
+import SEO from "@/components/SEO";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -57,6 +58,12 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO
+        title="Contact Us"
+        description="Get in touch with NEXUS CHINA to learn more about our exclusive China immersion programs for elite UK students."
+        keywords="contact NEXUS CHINA, book consultation, China program inquiry"
+        canonical="https://nexuschina.com/contact"
+      />
       <Navbar />
       
       <main className="pt-20">

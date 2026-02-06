@@ -3,6 +3,7 @@
  */
 
 import ScrollAnimation from "@/components/ScrollAnimation";
+import SEO from "@/components/SEO";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Target, Eye, Heart, Award } from "lucide-react";
@@ -33,6 +34,12 @@ export default function About() {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO
+        title="About Us"
+        description="NEXUS CHINA connects elite UK students with China's innovation ecosystem. Learn why understanding contemporary China is essential for future global leaders."
+        keywords="about NEXUS CHINA, China education program, UK China exchange"
+        canonical="https://nexuschina.com/about"
+      />
       <Navbar />
       
       <main className="pt-20">
@@ -49,6 +56,86 @@ export default function About() {
             <p className="text-xl leading-relaxed opacity-90">
               We are the bridge between global future leaders and the heart of 21st-century innovation. Our mission is to provide transformative China immersion experiences that expand worldviews and forge lasting connections.
             </p>
+          </div>
+        </section>
+
+        {/* Why China Now - New Section */}
+        <section className="section-padding bg-ivory">
+          <div className="container max-w-5xl">
+            <h2 
+              className="text-4xl md:text-5xl font-medium mb-8 text-charcoal text-center"
+              style={{ fontFamily: "'Cormorant Garamond', serif" }}
+            >
+              Why Understanding China is <span className="text-rose-gold">Essential</span>
+            </h2>
+            <div className="luxury-divider mb-12"></div>
+            
+            <div className="space-y-8 text-lg leading-relaxed text-warm-gray">
+              <p className="text-xl font-medium text-charcoal">
+                For Western elites—particularly those from Oxford, Cambridge, Imperial, and leading UK institutions—deep engagement with contemporary China is no longer optional. It is a strategic imperative.
+              </p>
+              
+              <div className="luxury-card p-8">
+                <h3 className="text-2xl font-medium mb-4 text-charcoal" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+                  The Geopolitical Reality
+                </h3>
+                <p className="mb-4">
+                  In January 2025, UK Prime Minister Keir Starmer's visit to Beijing marked a pivotal reset in UK-China relations. His emphasis on "pragmatic engagement" and "consistent, respectful dialogue" signals a recognition that China is not a challenge to be managed from afar, but a partner to be understood deeply.
+                </p>
+                <p>
+                  As Starmer stated: "We want a serious and pragmatic relationship with China... one that allows us to engage frankly on areas where we disagree, but also to find common ground." This diplomatic shift reflects a broader truth: the West's future prosperity depends on informed, nuanced understanding of China.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-8">
+                <div className="luxury-card p-6 text-center">
+                  <p className="text-4xl font-medium text-rose-gold mb-2" style={{ fontFamily: "'Cormorant Garamond', serif" }}>$18.1T</p>
+                  <p className="text-sm uppercase tracking-wide text-charcoal font-medium">China's GDP (2024)</p>
+                  <p className="text-xs text-muted-foreground mt-2">World's 2nd largest economy</p>
+                </div>
+                <div className="luxury-card p-6 text-center">
+                  <p className="text-4xl font-medium text-rose-gold mb-2" style={{ fontFamily: "'Cormorant Garamond', serif" }}>40%</p>
+                  <p className="text-sm uppercase tracking-wide text-charcoal font-medium">Global EV Market Share</p>
+                  <p className="text-xs text-muted-foreground mt-2">Leading green tech innovation</p>
+                </div>
+                <div className="luxury-card p-6 text-center">
+                  <p className="text-4xl font-medium text-rose-gold mb-2" style={{ fontFamily: "'Cormorant Garamond', serif" }}>1st</p>
+                  <p className="text-sm uppercase tracking-wide text-charcoal font-medium">AI Patent Applications</p>
+                  <p className="text-xs text-muted-foreground mt-2">Surpassing US since 2021</p>
+                </div>
+              </div>
+
+              <div className="luxury-card p-8 bg-charcoal text-ivory">
+                <h3 className="text-2xl font-medium mb-4 text-champagne" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+                  The Innovation Imperative
+                </h3>
+                <p className="mb-4">
+                  China is no longer the "world's factory"—it is the world's innovation laboratory. From ByteDance's AI-driven content algorithms to BYD's vertical integration in electric vehicles, from Huawei's 5G infrastructure to Tencent's super-app ecosystem, Chinese companies are redefining global technology standards.
+                </p>
+                <p>
+                  Future business leaders, policymakers, and investors who lack firsthand experience of China's innovation culture will find themselves at a profound disadvantage. Understanding China is understanding the future.
+                </p>
+              </div>
+
+              <div className="luxury-card p-8">
+                <h3 className="text-2xl font-medium mb-4 text-charcoal" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+                  Beyond Stereotypes: The Lived Reality
+                </h3>
+                <p className="mb-4">
+                  Western media narratives often reduce China to simplistic binaries. But the reality is far more nuanced, dynamic, and inspiring. China's urban centers pulse with entrepreneurial energy. Its universities produce world-class research. Its cultural renaissance blends 5,000 years of heritage with cutting-edge contemporary art.
+                </p>
+                <p>
+                  To truly understand China, you must experience it. Walk through Shenzhen's hardware markets. Debate with Tsinghua professors. Dine with tech founders in Hangzhou. Witness the Forbidden City at dawn. This is what NEXUS CHINA offers: not tourism, but transformation.
+                </p>
+              </div>
+
+              <div className="text-center mt-12">
+                <p className="text-2xl font-medium text-charcoal mb-4" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+                  "The future belongs to those who understand China—not from headlines, but from experience."
+                </p>
+                <p className="text-sm uppercase tracking-wide text-muted-foreground">— NEXUS CHINA</p>
+              </div>
+            </div>
           </div>
         </section>
 

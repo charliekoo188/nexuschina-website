@@ -5,6 +5,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollAnimation from "@/components/ScrollAnimation";
+import SEO from "@/components/SEO";
 import { ArrowRight, Building2, GraduationCap, Heart, Landmark, Users, Globe } from "lucide-react";
 import { Link } from "wouter";
 import { useEffect, useRef } from "react";
@@ -62,6 +63,12 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO 
+        title="Home"
+        description="NEXUS CHINA offers exclusive China immersion programs for elite students from Oxford, Cambridge, Imperial, and top UK private schools. Experience cutting-edge technology, world-class enterprises, premier academic institutions, and contemporary culture."
+        keywords="China immersion program, UK students China, Oxford Cambridge China, elite education China, China study tour, enterprise visits China, cultural exchange, tech innovation China"
+        canonical="https://nexuschina.com/"
+      />
       <Navbar />
       
       <main>
@@ -84,8 +91,8 @@ export default function Home() {
 
           {/* Hero Content */}
           <div className="relative z-10 container text-center text-ivory px-4">
-            {/* Enhanced Text Background Mask */}
-            <div className="absolute inset-0 bg-charcoal/60 backdrop-blur-md rounded-2xl -z-10 mx-auto shadow-2xl" style={{ maxWidth: '1100px', left: '50%', transform: 'translateX(-50%)', padding: '3rem' }}></div>
+            {/* Enhanced Text Background Mask - Full Coverage */}
+            <div className="absolute bg-charcoal/70 backdrop-blur-lg rounded-3xl -z-10 shadow-2xl" style={{ top: '-3rem', bottom: '-3rem', left: '50%', transform: 'translateX(-50%)', width: 'calc(100% + 4rem)', maxWidth: '1200px' }}></div>
             <p className="text-sm font-medium tracking-[0.3em] uppercase mb-6 text-champagne fade-in-up">
               WHERE FUTURE LEADERS MEET MODERN CHINA
             </p>

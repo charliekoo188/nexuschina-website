@@ -3,6 +3,7 @@
  */
 
 import ScrollAnimation from "@/components/ScrollAnimation";
+import SEO from "@/components/SEO";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Building2, GraduationCap, Heart, Landmark, ArrowRight } from "lucide-react";
@@ -65,6 +66,12 @@ export default function Resources() {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO
+        title="Resources"
+        description="Explore NEXUS CHINA's extensive network of partners including top Chinese tech companies, premier universities, and cultural institutions."
+        keywords="China tech companies, Chinese universities, NEXUS CHINA partners"
+        canonical="https://nexuschina.com/resources"
+      />
       <Navbar />
       
       <main className="pt-20">
