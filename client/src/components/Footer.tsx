@@ -68,10 +68,8 @@ export default function Footer() {
             <ul className="space-y-2">
               {footerLinks.programs.map((link, index) => (
                 <li key={index}>
-                  <Link href={link.href}>
-                    <a className="text-sm opacity-80 hover:opacity-100 hover:text-champagne transition-all">
-                      {link.label}
-                    </a>
+                  <Link href={link.href} className="text-sm opacity-80 hover:opacity-100 hover:text-champagne transition-all">
+                    {link.label}
                   </Link>
                 </li>
               ))}
@@ -86,10 +84,8 @@ export default function Footer() {
             <ul className="space-y-2">
               {footerLinks.company.map((link, index) => (
                 <li key={index}>
-                  <Link href={link.href}>
-                    <a className="text-sm opacity-80 hover:opacity-100 hover:text-champagne transition-all">
-                      {link.label}
-                    </a>
+                  <Link href={link.href} className="text-sm opacity-80 hover:opacity-100 hover:text-champagne transition-all">
+                    {link.label}
                   </Link>
                 </li>
               ))}
@@ -104,10 +100,8 @@ export default function Footer() {
             <ul className="space-y-2">
               {footerLinks.resources.map((link, index) => (
                 <li key={index}>
-                  <Link href={link.href}>
-                    <a className="text-sm opacity-80 hover:opacity-100 hover:text-champagne transition-all">
-                      {link.label}
-                    </a>
+                  <Link href={link.href} className="text-sm opacity-80 hover:opacity-100 hover:text-champagne transition-all">
+                    {link.label}
                   </Link>
                 </li>
               ))}

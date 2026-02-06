@@ -69,8 +69,8 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO 
-        title="Home"
-        description="NEXUS CHINA offers exclusive China immersion programs for elite students from Oxford, Cambridge, Imperial, and top UK private schools. Experience cutting-edge technology, world-class enterprises, premier academic institutions, and contemporary culture."
+        title="NEXUS CHINA - Elite China Programs for UK Students"
+        description="Exclusive China immersion for Oxford, Cambridge & Imperial students. Access top tech firms, universities & cultural institutions."
         keywords="China immersion program, UK students China, Oxford Cambridge China, elite education China, China study tour, enterprise visits China, cultural exchange, tech innovation China"
         canonical="https://nexuschina.com/"
       />
