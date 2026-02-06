@@ -301,6 +301,14 @@
     color: rgb(var(--color-charcoal));
   }
 
+  .text-warm-gray {
+    color: rgb(var(--color-warm-gray));
+  }
+
+  .text-ivory {
+    color: rgb(var(--color-ivory));
+  }
+
   .bg-champagne {
     background-color: rgb(var(--color-champagne));
   }

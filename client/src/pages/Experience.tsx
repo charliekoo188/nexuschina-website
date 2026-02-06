@@ -48,8 +48,8 @@ export default function Experience() {
       caption: "Networking Dinner"
     },
     {
-      image: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800&q=80",
-      caption: "Cultural Immersion"
+      image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663326825618/oWDsqYgpejVmiIEs.jpg",
+      caption: "The Forbidden City"
     },
     {
       image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&q=80",
@@ -60,8 +60,8 @@ export default function Experience() {
       caption: "Group Discussion"
     },
     {
-      image: "https://images.unsplash.com/photo-1496247749665-49cf5b1022e9?w=800&q=80",
-      caption: "City Exploration"
+      image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663326825618/GcVJrkQqCkCwySWG.jpg",
+      caption: "Lujiazui Night View"
     }
   ];
 

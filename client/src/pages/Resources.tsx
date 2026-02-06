@@ -155,21 +155,41 @@ export default function Resources() {
             </p>
             
             {/* Logo Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-8 items-center justify-items-center opacity-60 hover:opacity-100 transition-opacity duration-500">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 items-center justify-items-center">
               <img 
                 src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663326825618/bSkBOWOTAjOlFswD.jpg"
-                alt="Tech Partners"
-                className="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                alt="Alibaba, Tencent, ByteDance"
+                className="h-16 object-contain opacity-60 hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-300"
+              />
+              <img 
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663326825618/tXwClAZSXemoUqld.jpg"
+                alt="BYD & DJI"
+                className="h-16 object-contain opacity-60 hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-300"
               />
               <img 
                 src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663326825618/vNbnqyaFgBReKele.png"
                 alt="Tsinghua University"
-                className="h-20 object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                className="h-20 object-contain opacity-60 hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-300"
               />
               <img 
                 src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663326825618/exKTMzUpDyOMFRjo.png"
                 alt="Peking University"
-                className="h-20 object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                className="h-20 object-contain opacity-60 hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-300"
+              />
+              <img 
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663326825618/OmXyVnqJSfkqLCoq.jpg"
+                alt="Shanghai Jiao Tong University"
+                className="h-20 object-contain opacity-60 hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-300"
+              />
+              <img 
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663326825618/ofZkmIMWlcHsQmiT.png"
+                alt="Fudan University"
+                className="h-20 object-contain opacity-60 hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-300"
+              />
+              <img 
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663326825618/mhjfOLuLbzYonrPz.jpg"
+                alt="WuXi AppTec"
+                className="h-16 object-contain opacity-60 hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-300"
               />
             </div>
           </div>
