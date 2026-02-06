@@ -15,13 +15,13 @@ export default function NotFound() {
       <main className="flex-1 flex items-center justify-center pt-20 pb-20">
         <div className="container max-w-2xl text-center px-4">
           <h1 
-            className="text-9xl font-medium mb-6 text-[rgb(var(--color-gold))]"
+            className="text-9xl font-medium mb-6 text-champagne"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
             404
           </h1>
           <h2 
-            className="text-4xl md:text-5xl font-medium mb-6 text-[rgb(var(--color-teal))]"
+            className="text-4xl md:text-5xl font-medium mb-6 text-charcoal"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
             Page Not Found

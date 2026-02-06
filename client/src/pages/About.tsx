@@ -36,15 +36,15 @@ export default function About() {
       
       <main className="pt-20">
         {/* Hero Section */}
-        <section className="section-padding bg-[rgb(var(--color-teal))] text-white">
+        <section className="section-padding bg-charcoal text-ivory">
           <div className="container max-w-4xl text-center">
             <h1 
               className="text-5xl md:text-6xl font-medium mb-6"
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
-              About <span className="text-[rgb(var(--color-gold))]">NEXUS CHINA</span>
+              About <span className="text-champagne">NEXUS CHINA</span>
             </h1>
-            <div className="gold-divider"></div>
+            <div className="luxury-divider"></div>
             <p className="text-xl leading-relaxed opacity-90">
               We are the bridge between global future leaders and the heart of 21st-century innovation. Our mission is to provide transformative China immersion experiences that expand worldviews and forge lasting connections.
             </p>
@@ -57,7 +57,7 @@ export default function About() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
               <div>
                 <h2 
-                  className="text-4xl font-medium mb-6 text-[rgb(var(--color-teal))]"
+                  className="text-4xl font-medium mb-6 text-charcoal"
                   style={{ fontFamily: "'Playfair Display', serif" }}
                 >
                   Our Mission
@@ -71,7 +71,7 @@ export default function About() {
               </div>
               <div>
                 <h2 
-                  className="text-4xl font-medium mb-6 text-[rgb(var(--color-teal))]"
+                  className="text-4xl font-medium mb-6 text-charcoal"
                   style={{ fontFamily: "'Playfair Display', serif" }}
                 >
                   Our Vision
@@ -92,7 +92,7 @@ export default function About() {
           <div className="container">
             <div className="text-center mb-16">
               <h2 
-                className="text-4xl md:text-5xl font-medium mb-4 text-[rgb(var(--color-teal))]"
+                className="text-4xl md:text-5xl font-medium mb-4 text-charcoal"
                 style={{ fontFamily: "'Playfair Display', serif" }}
               >
                 Our Values
@@ -109,11 +109,11 @@ export default function About() {
                   key={index}
                   className="text-center p-8 bg-white rounded-sm hover:shadow-lg transition-luxury"
                 >
-                  <div className="inline-flex items-center justify-center w-16 h-16 mb-4 bg-[rgb(var(--color-teal))] text-[rgb(var(--color-gold))] rounded-full">
+                  <div className="inline-flex items-center justify-center w-16 h-16 mb-4 bg-charcoal text-champagne rounded-full">
                     <value.icon size={28} />
                   </div>
                   <h3 
-                    className="text-2xl font-medium mb-4 text-[rgb(var(--color-teal))]"
+                    className="text-2xl font-medium mb-4 text-charcoal"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
                     {value.title}
@@ -131,7 +131,7 @@ export default function About() {
         <section className="section-padding bg-white">
           <div className="container max-w-4xl">
             <h2 
-              className="text-4xl md:text-5xl font-medium mb-8 text-[rgb(var(--color-teal))] text-center"
+              className="text-4xl md:text-5xl font-medium mb-8 text-charcoal text-center"
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
               Our Story

@@ -60,13 +60,13 @@ export default function Contact() {
       
       <main className="pt-20">
         {/* Hero Section */}
-        <section className="section-padding bg-[rgb(var(--color-teal))] text-white">
+        <section className="section-padding bg-charcoal text-white">
           <div className="container max-w-4xl text-center">
             <h1 
               className="text-5xl md:text-6xl font-medium mb-6"
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
-              Get in <span className="text-[rgb(var(--color-gold))]">Touch</span>
+              Get in <span className="text-champagne">Touch</span>
             </h1>
             <div className="gold-divider"></div>
             <p className="text-xl leading-relaxed opacity-90">
@@ -82,7 +82,7 @@ export default function Contact() {
               {/* Contact Form */}
               <div>
                 <h2 
-                  className="text-3xl font-medium mb-6 text-[rgb(var(--color-teal))]"
+                  className="text-3xl font-medium mb-6 text-charcoal"
                   style={{ fontFamily: "'Playfair Display', serif" }}
                 >
                   Send Us a Message
@@ -167,7 +167,7 @@ export default function Contact() {
               {/* Contact Information */}
               <div>
                 <h2 
-                  className="text-3xl font-medium mb-6 text-[rgb(var(--color-teal))]"
+                  className="text-3xl font-medium mb-6 text-charcoal"
                   style={{ fontFamily: "'Playfair Display', serif" }}
                 >
                   Contact Information
@@ -179,17 +179,17 @@ export default function Contact() {
                 <div className="space-y-6">
                   {contactInfo.map((info, index) => (
                     <div key={index} className="flex items-start space-x-4 p-6 bg-[rgb(var(--color-ivory))] rounded-sm">
-                      <div className="flex-shrink-0 w-12 h-12 bg-[rgb(var(--color-teal))] text-[rgb(var(--color-gold))] rounded-full flex items-center justify-center">
+                      <div className="flex-shrink-0 w-12 h-12 bg-charcoal text-champagne rounded-full flex items-center justify-center">
                         <info.icon size={20} />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-[rgb(var(--color-teal))] mb-1">
+                        <h3 className="font-semibold text-charcoal mb-1">
                           {info.title}
                         </h3>
                         {info.link ? (
                           <a 
                             href={info.link}
-                            className="text-muted-foreground hover:text-[rgb(var(--color-gold))] transition-luxury"
+                            className="text-muted-foreground hover:text-champagne transition-luxury"
                           >
                             {info.content}
                           </a>
@@ -201,9 +201,9 @@ export default function Contact() {
                   ))}
                 </div>
 
-                <div className="mt-8 p-6 bg-[rgb(var(--color-teal))] text-white rounded-sm">
+                <div className="mt-8 p-6 bg-charcoal text-white rounded-sm">
                   <h3 
-                    className="text-xl font-medium mb-3 text-[rgb(var(--color-gold))]"
+                    className="text-xl font-medium mb-3 text-champagne"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
                     Connect on WeChat
@@ -211,7 +211,7 @@ export default function Contact() {
                   <p className="text-sm mb-3 opacity-90">
                     Scan our QR code or add us: <strong>NexusChina</strong>
                   </p>
-                  <button className="text-sm uppercase tracking-wide border border-[rgb(var(--color-gold))] text-[rgb(var(--color-gold))] px-6 py-2 hover:bg-[rgb(var(--color-gold))] hover:text-[rgb(var(--color-teal))] transition-luxury">
+                  <button className="text-sm uppercase tracking-wide border border-champagne text-champagne px-6 py-2 hover:bg-champagne hover:text-charcoal transition-luxury">
                     View QR Code
                   </button>
                 </div>
@@ -224,7 +224,7 @@ export default function Contact() {
         <section className="section-padding bg-[rgb(var(--color-ivory))]">
           <div className="container max-w-4xl text-center">
             <h2 
-              className="text-4xl font-medium mb-6 text-[rgb(var(--color-teal))]"
+              className="text-4xl font-medium mb-6 text-charcoal"
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
               Have Questions?

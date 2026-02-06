@@ -70,15 +70,15 @@ export default function Programs() {
       
       <main className="pt-20">
         {/* Hero Section */}
-        <section className="section-padding bg-[rgb(var(--color-teal))] text-white">
+        <section className="section-padding bg-charcoal text-ivory">
           <div className="container max-w-4xl text-center">
             <h1 
               className="text-5xl md:text-6xl font-medium mb-6"
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
-              Our <span className="text-[rgb(var(--color-gold))]">Programs</span>
+              Our <span className="text-champagne">Programs</span>
             </h1>
-            <div className="gold-divider"></div>
+            <div className="luxury-divider"></div>
             <p className="text-xl leading-relaxed opacity-90">
               Carefully curated immersion experiences designed for elite students seeking deep understanding of China's innovation ecosystem. Each program offers exclusive access, expert insights, and transformative experiences.
             </p>
@@ -105,7 +105,7 @@ export default function Programs() {
                   </div>
                   <div className={`${index % 2 === 1 ? 'lg:order-1' : ''} space-y-6`}>
                     <h2 
-                      className="text-4xl font-medium text-[rgb(var(--color-teal))]"
+                      className="text-4xl font-medium text-charcoal"
                       style={{ fontFamily: "'Playfair Display', serif" }}
                     >
                       {program.title}
@@ -114,15 +114,15 @@ export default function Programs() {
                     {/* Program Meta */}
                     <div className="grid grid-cols-2 gap-4">
                       <div className="flex items-center space-x-2 text-sm">
-                        <Calendar size={18} className="text-[rgb(var(--color-gold))]" />
+                        <Calendar size={18} className="text-champagne" />
                         <span className="text-muted-foreground">{program.duration}</span>
                       </div>
                       <div className="flex items-center space-x-2 text-sm">
-                        <Users size={18} className="text-[rgb(var(--color-gold))]" />
+                        <Users size={18} className="text-champagne" />
                         <span className="text-muted-foreground">{program.participants}</span>
                       </div>
                       <div className="flex items-center space-x-2 text-sm col-span-2">
-                        <MapPin size={18} className="text-[rgb(var(--color-gold))]" />
+                        <MapPin size={18} className="text-champagne" />
                         <span className="text-muted-foreground">{program.locations}</span>
                       </div>
                     </div>
@@ -133,13 +133,13 @@ export default function Programs() {
 
                     {/* Highlights */}
                     <div>
-                      <h3 className="text-xl font-semibold mb-3 text-[rgb(var(--color-teal))]">
+                      <h3 className="text-xl font-semibold mb-3 text-charcoal">
                         Program Highlights
                       </h3>
                       <ul className="space-y-2">
                         {program.highlights.map((highlight, idx) => (
                           <li key={idx} className="flex items-start space-x-2">
-                            <Check size={18} className="text-[rgb(var(--color-gold))] mt-1 flex-shrink-0" />
+                            <Check size={18} className="text-champagne mt-1 flex-shrink-0" />
                             <span className="text-muted-foreground">{highlight}</span>
                           </li>
                         ))}
@@ -151,7 +151,7 @@ export default function Programs() {
                       <div>
                         <p className="text-sm text-muted-foreground mb-1">Starting from</p>
                         <p 
-                          className="text-3xl font-medium text-[rgb(var(--color-gold))]"
+                          className="text-3xl font-medium text-champagne"
                           style={{ fontFamily: "'Playfair Display', serif" }}
                         >
                           {program.price}
@@ -174,7 +174,7 @@ export default function Programs() {
         <section className="section-padding bg-[rgb(var(--color-ivory))]">
           <div className="container max-w-4xl text-center">
             <h2 
-              className="text-4xl md:text-5xl font-medium mb-6 text-[rgb(var(--color-teal))]"
+              className="text-4xl md:text-5xl font-medium mb-6 text-charcoal"
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
               {customProgram.title}
@@ -195,7 +195,7 @@ export default function Programs() {
         <section className="section-padding bg-white">
           <div className="container max-w-4xl">
             <h2 
-              className="text-4xl font-medium mb-12 text-[rgb(var(--color-teal))] text-center"
+              className="text-4xl font-medium mb-12 text-charcoal text-center"
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
               What's Included
@@ -212,7 +212,7 @@ export default function Programs() {
                 "Program materials and resources"
               ].map((item, index) => (
                 <div key={index} className="flex items-start space-x-3">
-                  <Check size={20} className="text-[rgb(var(--color-gold))] mt-1 flex-shrink-0" />
+                  <Check size={20} className="text-champagne mt-1 flex-shrink-0" />
                   <span className="text-lg text-muted-foreground">{item}</span>
                 </div>
               ))}

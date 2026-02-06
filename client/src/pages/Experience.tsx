@@ -71,15 +71,15 @@ export default function Experience() {
       
       <main className="pt-20">
         {/* Hero Section */}
-        <section className="section-padding bg-[rgb(var(--color-teal))] text-white">
+        <section className="section-padding bg-charcoal text-ivory">
           <div className="container max-w-4xl text-center">
             <h1 
               className="text-5xl md:text-6xl font-medium mb-6"
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
-              The <span className="text-[rgb(var(--color-gold))]">Experience</span>
+              The <span className="text-champagne">Experience</span>
             </h1>
-            <div className="gold-divider"></div>
+            <div className="luxury-divider"></div>
             <p className="text-xl leading-relaxed opacity-90">
               Hear from our alumni about their transformative journeys. See what makes NEXUS CHINA programs truly exceptional through their eyes.
             </p>
@@ -91,7 +91,7 @@ export default function Experience() {
           <div className="container">
             <div className="text-center mb-16">
               <h2 
-                className="text-4xl md:text-5xl font-medium mb-4 text-[rgb(var(--color-teal))]"
+                className="text-4xl md:text-5xl font-medium mb-4 text-charcoal"
                 style={{ fontFamily: "'Playfair Display', serif" }}
               >
                 What Our Alumni Say
@@ -105,7 +105,7 @@ export default function Experience() {
                   key={index}
                   className="bg-[rgb(var(--color-ivory))] p-8 rounded-sm hover:shadow-lg transition-luxury"
                 >
-                  <Quote size={32} className="text-[rgb(var(--color-gold))] mb-4" />
+                  <Quote size={32} className="text-champagne mb-4" />
                   <p className="text-lg leading-relaxed text-muted-foreground mb-6 italic">
                     "{testimonial.quote}"
                   </p>
@@ -116,13 +116,13 @@ export default function Experience() {
                       className="w-16 h-16 rounded-full object-cover"
                     />
                     <div>
-                      <h4 className="font-semibold text-[rgb(var(--color-teal))]">
+                      <h4 className="font-semibold text-charcoal">
                         {testimonial.name}
                       </h4>
                       <p className="text-sm text-muted-foreground">
                         {testimonial.university}
                       </p>
-                      <p className="text-xs text-[rgb(var(--color-gold))]">
+                      <p className="text-xs text-champagne">
                         {testimonial.program}
                       </p>
                     </div>
@@ -138,7 +138,7 @@ export default function Experience() {
           <div className="container">
             <div className="text-center mb-16">
               <h2 
-                className="text-4xl md:text-5xl font-medium mb-4 text-[rgb(var(--color-teal))]"
+                className="text-4xl md:text-5xl font-medium mb-4 text-charcoal"
                 style={{ fontFamily: "'Playfair Display', serif" }}
               >
                 Program Gallery
@@ -160,7 +160,7 @@ export default function Experience() {
                     alt={item.caption}
                     className="w-full h-80 object-cover group-hover:scale-110 transition-luxury duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[rgb(var(--color-teal))] to-transparent opacity-0 group-hover:opacity-90 transition-luxury flex items-end p-6">
+                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal to-transparent opacity-0 group-hover:opacity-90 transition-luxury flex items-end p-6">
                     <p className="text-white text-lg font-medium">
                       {item.caption}
                     </p>
@@ -176,7 +176,7 @@ export default function Experience() {
           <div className="container max-w-4xl">
             <div className="text-center mb-12">
               <h2 
-                className="text-4xl font-medium mb-4 text-[rgb(var(--color-teal))]"
+                className="text-4xl font-medium mb-4 text-charcoal"
                 style={{ fontFamily: "'Playfair Display', serif" }}
               >
                 Alumni Outcomes
@@ -187,7 +187,7 @@ export default function Experience() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
               <div>
                 <p 
-                  className="text-5xl font-medium mb-2 text-[rgb(var(--color-gold))]"
+                  className="text-5xl font-medium mb-2 text-champagne"
                   style={{ fontFamily: "'Playfair Display', serif" }}
                 >
                   92%
@@ -198,7 +198,7 @@ export default function Experience() {
               </div>
               <div>
                 <p 
-                  className="text-5xl font-medium mb-2 text-[rgb(var(--color-gold))]"
+                  className="text-5xl font-medium mb-2 text-champagne"
                   style={{ fontFamily: "'Playfair Display', serif" }}
                 >
                   85%
@@ -209,7 +209,7 @@ export default function Experience() {
               </div>
               <div>
                 <p 
-                  className="text-5xl font-medium mb-2 text-[rgb(var(--color-gold))]"
+                  className="text-5xl font-medium mb-2 text-champagne"
                   style={{ fontFamily: "'Playfair Display', serif" }}
                 >
                   98%

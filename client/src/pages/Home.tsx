@@ -83,6 +83,8 @@ export default function Home() {
 
           {/* Hero Content */}
           <div className="relative z-10 container text-center text-ivory px-4">
+            {/* Text Background Mask for Better Contrast */}
+            <div className="absolute inset-0 bg-charcoal/40 backdrop-blur-sm rounded-lg -z-10 mx-auto" style={{ maxWidth: '1000px', left: '50%', transform: 'translateX(-50%)' }}></div>
             <p className="text-sm font-medium tracking-[0.3em] uppercase mb-6 text-champagne fade-in-up">
               WHERE FUTURE LEADERS MEET MODERN CHINA
             </p>
