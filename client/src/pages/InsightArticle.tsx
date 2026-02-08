@@ -805,9 +805,9 @@ export default function InsightArticle() {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO 
-        title={`${article.title} | NEXUS CHINA Insights`}
-        description={articleSEO[slug || ""]?.description || article.title}
-        keywords={articleSEO[slug || ""]?.keywords || "China insights, business analysis, tech innovation, UK students China"}
+        title={`${article.title} - NEXUS CHINA Insights`}
+        description={articleSEO[slug || ""]?.description || `${article.title} - Comprehensive analysis for UK students from Oxford, Cambridge, and Imperial. Explore China's innovation ecosystem.`}
+        keywords={articleSEO[slug || ""]?.keywords || "China insights, business analysis, tech innovation, UK students China, Oxford Cambridge Imperial"}
         canonical={`https://nexuschina.com/insights/${slug}`}
       />
       <Navbar />

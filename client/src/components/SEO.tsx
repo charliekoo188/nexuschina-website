@@ -23,7 +23,7 @@ export default function SEO({
 }: SEOProps) {
   useEffect(() => {
     // Update document title
-    document.title = `${title} | NEXUS CHINA`;
+    document.title = title;
 
     // Update or create meta tags
     const updateMetaTag = (name: string, content: string, isProperty = false) => {
