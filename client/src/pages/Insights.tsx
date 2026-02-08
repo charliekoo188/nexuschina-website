@@ -81,6 +81,46 @@ export default function Insights() {
       category: "Global Trends",
       image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80",
       slug: "sino-middle-eastern-partnerships"
+    },
+    {
+      title: "China's Quantum Computing Breakthrough: What UK Students Need to Know",
+      excerpt: "In December 2023, China achieved quantum supremacy with a 66-qubit programmable superconducting quantum computer, marking a pivotal moment in the global technology race.",
+      author: "Prof. David Thompson",
+      date: "December 15, 2023",
+      readTime: "9 min read",
+      category: "Technology",
+      image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&q=80",
+      slug: "quantum-computing-china-breakthrough"
+    },
+    {
+      title: "How China Became the World's EV Battery Powerhouse",
+      excerpt: "By mid-2024, China controlled 80% of global EV battery production capacity, a dominance that has profound implications for the global energy transition.",
+      author: "Dr. Rachel Foster",
+      date: "June 20, 2024",
+      readTime: "11 min read",
+      category: "Sustainability",
+      image: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=800&q=80",
+      slug: "china-ev-battery-dominance-2024"
+    },
+    {
+      title: "China's Cultural Soft Power: From TikTok to Global Influence",
+      excerpt: "By 2025, China's cultural influence has expanded far beyond traditional diplomacy. From TikTok's global dominance to Chinese dramas captivating international audiences, China is reshaping global culture.",
+      author: "Dr. Sophie Williams",
+      date: "March 10, 2025",
+      readTime: "10 min read",
+      category: "Global Trends",
+      image: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800&q=80",
+      slug: "chinese-cultural-soft-power-2025"
+    },
+    {
+      title: "China's Belt and Road Initiative: Reshaping Global Infrastructure",
+      excerpt: "By 2025, China's Belt and Road Initiative has invested over $1 trillion in infrastructure projects across 150 countries, fundamentally reshaping global trade, development, and geopolitics.",
+      author: "Prof. Jonathan Clarke",
+      date: "September 5, 2025",
+      readTime: "12 min read",
+      category: "Global Trends",
+      image: "https://images.unsplash.com/photo-1464938050520-ef2270bb8ce8?w=800&q=80",
+      slug: "china-global-infrastructure-belt-road-2025"
     }
   ];
 

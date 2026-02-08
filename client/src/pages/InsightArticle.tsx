@@ -8,12 +8,61 @@ import Footer from "@/components/Footer";
 import { Calendar, Clock, ArrowLeft, Share2 } from "lucide-react";
 import { Link, useParams } from "wouter";
 import { useEffect } from "react";
+import SocialShare from "@/components/SocialShare";
 
 export default function InsightArticle() {
   const params = useParams();
   const slug = params.slug;
 
   // Article data - in a real app, this would come from a CMS or API
+  // SEO metadata for each article
+  const articleSEO: Record<string, { description: string; keywords: string }> = {
+    "china-ai-revolution": {
+      description: "China surpasses US in AI patent applications. Comprehensive analysis of China's AI investment, data advantage, key players like ByteDance and Baidu, and implications for Western business leaders.",
+      keywords: "China AI, artificial intelligence China, ByteDance, Baidu, SenseTime, AI patents, Chinese technology, AI development, machine learning China, UK China technology"
+    },
+    "byd-global-expansion": {
+      description: "How BYD's vertical integration strategy is reshaping the global EV market. Analysis of BYD's expansion, manufacturing capabilities, and what it means for Western automakers and investors.",
+      keywords: "BYD, electric vehicles, EV market, Chinese automakers, vertical integration, global expansion, automotive industry, UK investors China"
+    },
+    "khalid-schwarzman-scholars": {
+      description: "Alumni spotlight: Khalid Al-Mansoori's journey from NEXUS CHINA to Tsinghua's Schwarzman Scholars program. How experiencing China firsthand shaped his academic and career choices.",
+      keywords: "Schwarzman Scholars, Tsinghua University, NEXUS CHINA alumni, study in China, UK students China, China immersion programs, elite education"
+    },
+    "china-green-tech-ecosystem": {
+      description: "Deep dive into China's renewable energy infrastructure, solar manufacturing dominance, EV battery innovation, and green technology ecosystem. Essential reading for sustainability professionals.",
+      keywords: "China green technology, renewable energy China, solar power, EV batteries, sustainability, clean energy, environmental technology, UK China green tech"
+    },
+    "uk-china-relations-career": {
+      description: "Following PM Starmer's Beijing visit, analysis of UK-China relationship reset and what it means for young professionals. Career opportunities in UK-China relations.",
+      keywords: "UK China relations, career opportunities, international relations, diplomacy, UK government China, young professionals, geopolitics"
+    },
+    "inside-bytedance": {
+      description: "Exclusive behind-the-scenes experience at ByteDance's Beijing headquarters. NEXUS CHINA participants share insights into China's most innovative tech giant and TikTok's parent company.",
+      keywords: "ByteDance, TikTok, Chinese tech companies, tech innovation, Beijing, company visit, UK students China tech, innovation culture"
+    },
+    "sino-middle-eastern-partnerships": {
+      description: "How Middle Eastern capital and Chinese innovation are creating new opportunities in green energy and fintech. Analysis of Sino-Middle Eastern partnerships and Belt and Road Initiative.",
+      keywords: "China Middle East, Belt and Road, green energy partnerships, fintech, international investment, geopolitics, UK China Middle East"
+    },
+    "quantum-computing-china-breakthrough": {
+      description: "China achieves quantum supremacy with 66-qubit quantum computer in December 2023. What UK students at Oxford, Cambridge, and Imperial need to know about China's quantum computing breakthrough.",
+      keywords: "quantum computing China, quantum supremacy, USTC, quantum technology, UK China quantum research, Oxford Cambridge Imperial, technology race, quantum revolution"
+    },
+    "china-ev-battery-dominance-2024": {
+      description: "By 2024, China controls 80% of global EV battery production. Analysis of CATL, BYD, battery supply chains, and implications for UK energy transition and career opportunities.",
+      keywords: "EV batteries China, CATL, BYD, lithium batteries, battery manufacturing, energy transition, UK energy security, supply chains, sustainability careers"
+    },
+    "chinese-cultural-soft-power-2025": {
+      description: "China's cultural influence from TikTok to global entertainment. How Chinese dramas, gaming, and social media are reshaping global culture and what UK students need to understand.",
+      keywords: "China soft power, TikTok, Chinese culture, cultural influence, C-dramas, Genshin Impact, Tencent, cultural diplomacy, UK China cultural exchange"
+    },
+    "china-global-infrastructure-belt-road-2025": {
+      description: "China's Belt and Road Initiative invests $1 trillion across 150 countries by 2025. Analysis of BRI projects, debt trap debate, UK-China infrastructure cooperation, and career opportunities.",
+      keywords: "Belt and Road Initiative, BRI, China infrastructure, global development, CPEC, international finance, UK China cooperation, development careers, geopolitics"
+    }
+  };
+
   const articles: Record<string, any> = {
     "china-ai-revolution": {
       title: "China's AI Revolution: What Western Leaders Need to Know",
@@ -385,6 +434,303 @@ export default function InsightArticle() {
   </a>
 </div>
       `
+    },
+    "quantum-computing-china-breakthrough": {
+      title: "China's Quantum Computing Breakthrough: What UK Students Need to Know",
+      author: "Prof. David Thompson",
+      date: "December 15, 2023",
+      readTime: "9 min read",
+      category: "Technology",
+      image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&q=80",
+      content: `
+<p class="text-xl leading-relaxed text-warm-gray mb-8">In December 2023, China achieved quantum supremacy with a 66-qubit programmable superconducting quantum computer, marking a pivotal moment in the global technology race. For UK students at Oxford, Cambridge, and Imperial, understanding this breakthrough is essential for careers in technology, finance, and policy.</p>
+
+<h2 class="text-3xl font-medium mb-4 mt-12 text-charcoal" style="font-family: 'Cormorant Garamond', serif">The Quantum Leap</h2>
+<p class="text-lg leading-relaxed text-warm-gray mb-6">China's quantum computer, developed by the University of Science and Technology of China (USTC), completed a calculation in 200 seconds that would take the world's most powerful classical supercomputer 2.5 billion years. This achievement surpassed Google's 2019 quantum supremacy claim and demonstrated China's commitment to leading the quantum revolution.</p>
+
+<p class="text-lg leading-relaxed text-warm-gray mb-6">The implications extend far beyond academic bragging rights. Quantum computing promises to revolutionize drug discovery, financial modeling, cryptography, and artificial intelligence. China's lead in this field could reshape global economic and security dynamics for decades to come.</p>
+
+<h2 class="text-3xl font-medium mb-4 mt-12 text-charcoal" style="font-family: 'Cormorant Garamond', serif">China's Quantum Strategy</h2>
+<p class="text-lg leading-relaxed text-warm-gray mb-6">China's quantum computing success is not accidental—it's the result of a coordinated national strategy spanning over a decade:</p>
+
+<ul class="list-disc list-inside space-y-3 text-lg text-warm-gray mb-6 ml-4">
+  <li><strong>Massive Investment:</strong> China has invested over $15 billion in quantum research since 2016, dwarfing Western investments.</li>
+  <li><strong>Talent Development:</strong> Top Chinese universities have established dedicated quantum research institutes, attracting global talent with competitive salaries and state-of-the-art facilities.</li>
+  <li><strong>Commercial Applications:</strong> Chinese companies like Alibaba and Baidu are already exploring commercial quantum computing applications, from optimization algorithms to quantum cryptography.</li>
+  <li><strong>Quantum Communications:</strong> China has deployed the world's first quantum satellite and built a 2,000-kilometer quantum communication network between Beijing and Shanghai.</li>
+</ul>
+
+<h2 class="text-3xl font-medium mb-4 mt-12 text-charcoal" style="font-family: 'Cormorant Garamond', serif">Implications for UK Graduates</h2>
+<p class="text-lg leading-relaxed text-warm-gray mb-6">For UK students pursuing careers in technology, finance, or policy, China's quantum computing breakthrough creates both challenges and opportunities:</p>
+
+<p class="text-lg leading-relaxed text-warm-gray mb-6"><strong>Technology Sector:</strong> Tech companies are racing to develop quantum-resistant encryption and quantum-enhanced algorithms. Understanding China's quantum ecosystem is crucial for anyone working in cybersecurity, AI, or advanced computing.</p>
+
+<p class="text-lg leading-relaxed text-warm-gray mb-6"><strong>Financial Services:</strong> Quantum computing will revolutionize financial modeling, risk analysis, and trading strategies. UK financial institutions are actively seeking professionals who understand both quantum computing and China's financial markets.</p>
+
+<p class="text-lg leading-relaxed text-warm-gray mb-6"><strong>Policy and Diplomacy:</strong> Quantum technology is becoming a key component of national security strategy. The UK government and think tanks need China specialists who can navigate the complex intersection of technology and geopolitics.</p>
+
+<h2 class="text-3xl font-medium mb-4 mt-12 text-charcoal" style="font-family: 'Cormorant Garamond', serif">The UK-China Quantum Collaboration</h2>
+<p class="text-lg leading-relaxed text-warm-gray mb-6">Despite geopolitical tensions, UK and Chinese researchers continue to collaborate on quantum research. Oxford, Cambridge, and Imperial maintain research partnerships with Chinese institutions, creating opportunities for students to engage with cutting-edge quantum research.</p>
+
+<p class="text-lg leading-relaxed text-warm-gray mb-6">However, this collaboration is increasingly complicated by national security concerns. UK students must navigate a complex landscape where scientific collaboration coexists with strategic competition.</p>
+
+<h2 class="text-3xl font-medium mb-4 mt-12 text-charcoal" style="font-family: 'Cormorant Garamond', serif">Building Quantum Literacy</h2>
+<p class="text-lg leading-relaxed text-warm-gray mb-6">For UK students, building quantum literacy—understanding both the technology and its geopolitical implications—is becoming essential. This requires:</p>
+
+<ul class="list-disc list-inside space-y-3 text-lg text-warm-gray mb-6 ml-4">
+  <li><strong>Technical Foundation:</strong> Understanding quantum mechanics principles and their applications in computing.</li>
+  <li><strong>Market Knowledge:</strong> Tracking developments in China's quantum ecosystem, from research breakthroughs to commercial applications.</li>
+  <li><strong>Strategic Thinking:</strong> Analyzing how quantum technology intersects with economic competition and national security.</li>
+  <li><strong>Cross-Cultural Competence:</strong> Engaging with Chinese researchers and understanding China's approach to technology development.</li>
+</ul>
+
+<p class="text-lg leading-relaxed text-warm-gray mb-6">Programs like NEXUS CHINA provide UK students with firsthand exposure to China's quantum research ecosystem, including visits to leading quantum labs and discussions with Chinese researchers.</p>
+
+<h2 class="text-3xl font-medium mb-4 mt-12 text-charcoal" style="font-family: 'Cormorant Garamond', serif">The Road Ahead</h2>
+<p class="text-lg leading-relaxed text-warm-gray mb-6">China's quantum computing breakthrough is just the beginning. The country is investing heavily in quantum sensing, quantum communications, and quantum materials. For UK students, staying informed about these developments is not just academically interesting—it's professionally essential.</p>
+
+<p class="text-lg leading-relaxed text-warm-gray mb-6">The quantum revolution will reshape industries, redefine security paradigms, and create new economic opportunities. Those who understand both the technology and China's role in its development will be positioned to lead in this new era.</p>
+
+<div class="bg-champagne/10 border-l-4 border-champagne p-6 my-8">
+  <h3 class="text-2xl font-medium mb-4 text-charcoal" style="font-family: 'Cormorant Garamond', serif">Explore China's Quantum Ecosystem</h3>
+  <p class="text-lg text-warm-gray mb-4">NEXUS CHINA's Tech Innovation Immersion program includes visits to China's leading quantum research labs and discussions with pioneering quantum scientists. Gain the insights that set you apart.</p>
+  <a href="/programs" class="inline-block bg-charcoal text-champagne px-8 py-3 hover:bg-charcoal/90 transition-colors">
+    View Programs
+  </a>
+</div>
+      `
+    },
+    "china-ev-battery-dominance-2024": {
+      title: "How China Became the World's EV Battery Powerhouse",
+      author: "Dr. Rachel Foster",
+      date: "June 20, 2024",
+      readTime: "11 min read",
+      category: "Sustainability",
+      image: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=800&q=80",
+      content: `
+<p class="text-xl leading-relaxed text-warm-gray mb-8">By mid-2024, China controlled 80% of global EV battery production capacity, a dominance that has profound implications for the global energy transition. For UK students considering careers in sustainability, energy, or international business, understanding China's battery ecosystem is essential.</p>
+
+<h2 class="text-3xl font-medium mb-4 mt-12 text-charcoal" style="font-family: 'Cormorant Garamond', serif">The Scale of Dominance</h2>
+<p class="text-lg leading-relaxed text-warm-gray mb-6">China's battery dominance extends across the entire supply chain:</p>
+
+<ul class="list-disc list-inside space-y-3 text-lg text-warm-gray mb-6 ml-4">
+  <li><strong>Raw Materials:</strong> China controls 70% of global lithium refining, 85% of cobalt refining, and 90% of rare earth processing.</li>
+  <li><strong>Cell Manufacturing:</strong> Chinese companies like CATL, BYD, and CALB produce more batteries than all Western manufacturers combined.</li>
+  <li><strong>Innovation:</strong> China leads in next-generation battery technologies, including sodium-ion batteries, solid-state batteries, and ultra-fast charging systems.</li>
+  <li><strong>Cost Efficiency:</strong> Chinese battery costs have fallen to $80/kWh, making EVs price-competitive with internal combustion vehicles.</li>
+</ul>
+
+<h2 class="text-3xl font-medium mb-4 mt-12 text-charcoal" style="font-family: 'Cormorant Garamond', serif">CATL: The Battery Giant</h2>
+<p class="text-lg leading-relaxed text-warm-gray mb-6">Contemporary Amperex Technology Co. Limited (CATL) has become the world's largest EV battery manufacturer, supplying Tesla, BMW, Volkswagen, and virtually every major automaker. Founded in 2011, CATL now commands over 35% of global market share.</p>
+
+<p class="text-lg leading-relaxed text-warm-gray mb-6">CATL's success stems from relentless innovation. The company's Qilin Battery, announced in 2022, achieves 255 Wh/kg energy density—13% higher than Tesla's 4680 cells. CATL's sodium-ion batteries, launched in 2023, promise to eliminate dependence on lithium for entry-level EVs.</p>
+
+<p class="text-lg leading-relaxed text-warm-gray mb-6">For UK students, CATL represents a case study in how Chinese companies can achieve global dominance through a combination of government support, massive scale, and continuous innovation.</p>
+
+<h2 class="text-3xl font-medium mb-4 mt-12 text-charcoal" style="font-family: 'Cormorant Garamond', serif">BYD's Vertical Integration</h2>
+<p class="text-lg leading-relaxed text-warm-gray mb-6">BYD (Build Your Dreams) has taken a different approach: vertical integration. Unlike Western automakers that outsource battery production, BYD manufactures its own batteries, motors, and semiconductors. This strategy has made BYD the world's largest EV manufacturer, surpassing Tesla in 2023.</p>
+
+<p class="text-lg leading-relaxed text-warm-gray mb-6">BYD's Blade Battery, using lithium iron phosphate (LFP) chemistry, offers superior safety and longevity at lower cost. The company's ability to control its entire supply chain has proven crucial during global supply chain disruptions.</p>
+
+<h2 class="text-3xl font-medium mb-4 mt-12 text-charcoal" style="font-family: 'Cormorant Garamond', serif">Implications for the UK</h2>
+<p class="text-lg leading-relaxed text-warm-gray mb-6">China's battery dominance creates strategic challenges for the UK:</p>
+
+<p class="text-lg leading-relaxed text-warm-gray mb-6"><strong>Energy Security:</strong> The UK's transition to electric vehicles depends on Chinese battery supply chains. This dependence raises concerns about economic security and geopolitical leverage.</p>
+
+<p class="text-lg leading-relaxed text-warm-gray mb-6"><strong>Industrial Strategy:</strong> The UK government has invested £1 billion in battery manufacturing, but British production capacity remains a fraction of China's. Building a competitive UK battery industry requires understanding Chinese manufacturing practices and supply chain strategies.</p>
+
+<p class="text-lg leading-relaxed text-warm-gray mb-6"><strong>Climate Goals:</strong> Achieving net-zero emissions by 2050 requires massive EV adoption, which in turn requires Chinese batteries. This creates a tension between climate ambitions and strategic autonomy.</p>
+
+<h2 class="text-3xl font-medium mb-4 mt-12 text-charcoal" style="font-family: 'Cormorant Garamond', serif">Career Opportunities</h2>
+<p class="text-lg leading-relaxed text-warm-gray mb-6">China's battery dominance creates diverse career opportunities for UK graduates:</p>
+
+<ul class="list-disc list-inside space-y-3 text-lg text-warm-gray mb-6 ml-4">
+  <li><strong>Supply Chain Management:</strong> Companies need professionals who understand Chinese battery supply chains and can navigate geopolitical risks.</li>
+  <li><strong>Technology Transfer:</strong> UK battery startups seek talent that can learn from Chinese innovations while developing homegrown capabilities.</li>
+  <li><strong>Policy Advisory:</strong> Government and think tanks need experts who can analyze China's battery strategy and recommend UK responses.</li>
+  <li><strong>Investment Analysis:</strong> Financial institutions require analysts who understand the economics and geopolitics of the battery industry.</li>
+</ul>
+
+<h2 class="text-3xl font-medium mb-4 mt-12 text-charcoal" style="font-family: 'Cormorant Garamond', serif">Next-Generation Technologies</h2>
+<p class="text-lg leading-relaxed text-warm-gray mb-6">China is not resting on its current dominance. Chinese companies are investing heavily in next-generation battery technologies:</p>
+
+<p class="text-lg leading-relaxed text-warm-gray mb-6"><strong>Solid-State Batteries:</strong> Chinese startups like WeLion and Qing Tao are racing to commercialize solid-state batteries, which promise double the energy density of current lithium-ion batteries.</p>
+
+<p class="text-lg leading-relaxed text-warm-gray mb-6"><strong>Sodium-Ion Batteries:</strong> CATL's sodium-ion batteries could eliminate lithium dependence for entry-level EVs, further cementing China's cost advantage.</p>
+
+<p class="text-lg leading-relaxed text-warm-gray mb-6"><strong>Battery Recycling:</strong> Chinese companies are building massive battery recycling facilities, creating a circular economy that reduces dependence on new raw materials.</p>
+
+<h2 class="text-3xl font-medium mb-4 mt-12 text-charcoal" style="font-family: 'Cormorant Garamond', serif">The Path Forward</h2>
+<p class="text-lg leading-relaxed text-warm-gray mb-6">For UK students, understanding China's battery ecosystem is not just about technology—it's about understanding the future of energy, transportation, and geopolitics. The transition to electric vehicles will define the 21st century economy, and China is positioned at its center.</p>
+
+<p class="text-lg leading-relaxed text-warm-gray mb-6">Programs like NEXUS CHINA offer UK students the opportunity to visit Chinese battery factories, meet with industry leaders, and understand the strategies that have made China the world's battery powerhouse.</p>
+
+<div class="bg-champagne/10 border-l-4 border-champagne p-6 my-8">
+  <h3 class="text-2xl font-medium mb-4 text-charcoal" style="font-family: 'Cormorant Garamond', serif">Experience China's Battery Revolution</h3>
+  <p class="text-lg text-warm-gray mb-4">NEXUS CHINA's Sustainability & Green Tech program includes exclusive visits to CATL, BYD, and other leading battery manufacturers. See the future of energy firsthand.</p>
+  <a href="/programs" class="inline-block bg-charcoal text-champagne px-8 py-3 hover:bg-charcoal/90 transition-colors">
+    Explore Programs
+  </a>
+</div>
+      `
+    },
+    "chinese-cultural-soft-power-2025": {
+      title: "China's Cultural Soft Power: From TikTok to Global Influence",
+      author: "Dr. Sophie Williams",
+      date: "March 10, 2025",
+      readTime: "10 min read",
+      category: "Global Trends",
+      image: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800&q=80",
+      content: `
+<p class="text-xl leading-relaxed text-warm-gray mb-8">By 2025, China's cultural influence has expanded far beyond traditional diplomacy. From TikTok's global dominance to Chinese dramas captivating international audiences, China is reshaping global culture in ways that UK students must understand to navigate the 21st century.</p>
+
+<h2 class="text-3xl font-medium mb-4 mt-12 text-charcoal" style="font-family: 'Cormorant Garamond', serif">The TikTok Phenomenon</h2>
+<p class="text-lg leading-relaxed text-warm-gray mb-6">TikTok, owned by Chinese company ByteDance, has become the world's most downloaded app with over 1.5 billion users. For the first time, a Chinese company has created a platform that defines global youth culture. TikTok's algorithm, developed in China, shapes what billions of people watch, share, and discuss.</p>
+
+<p class="text-lg leading-relaxed text-warm-gray mb-6">This represents a fundamental shift in cultural power. For decades, American platforms like Facebook, YouTube, and Instagram dominated global social media. TikTok's success demonstrates that Chinese companies can not only compete but lead in shaping global digital culture.</p>
+
+<p class="text-lg leading-relaxed text-warm-gray mb-6">For UK students, TikTok's rise raises important questions about cultural influence, data governance, and the future of digital platforms. Understanding how TikTok succeeded where other Chinese apps failed offers valuable lessons for anyone pursuing careers in technology, media, or international business.</p>
+
+<h2 class="text-3xl font-medium mb-4 mt-12 text-charcoal" style="font-family: 'Cormorant Garamond', serif">Chinese Dramas and Gaming</h2>
+<p class="text-lg leading-relaxed text-warm-gray mb-6">Chinese cultural exports extend beyond social media. Chinese dramas (C-dramas) have gained massive international followings, with shows like "The Untamed" and "Word of Honor" attracting millions of viewers across Asia, Europe, and the Americas. Streaming platforms like iQiyi and Tencent Video are competing with Netflix and Disney+ for global audiences.</p>
+
+<p class="text-lg leading-relaxed text-warm-gray mb-6">In gaming, Chinese companies dominate. Tencent owns Riot Games (League of Legends), has major stakes in Epic Games (Fortnite), and publishes PUBG Mobile. Genshin Impact, developed by Chinese studio miHoYo, has generated over $4 billion in revenue and set new standards for mobile gaming.</p>
+
+<p class="text-lg leading-relaxed text-warm-gray mb-6">These successes represent more than commercial achievement—they demonstrate China's ability to create cultural products that resonate globally, challenging Western cultural dominance.</p>
+
+<h2 class="text-3xl font-medium mb-4 mt-12 text-charcoal" style="font-family: 'Cormorant Garamond', serif">The Confucius Institute Debate</h2>
+<p class="text-lg leading-relaxed text-warm-gray mb-6">China's government-sponsored Confucius Institutes, which teach Chinese language and culture at universities worldwide, have become controversial. Critics argue they represent Chinese government influence on Western campuses, while supporters see them as valuable cultural exchange programs.</p>
+
+<p class="text-lg leading-relaxed text-warm-gray mb-6">For UK students, the Confucius Institute debate highlights the complex relationship between cultural exchange and political influence. Understanding this nuance is essential for anyone working in education, cultural diplomacy, or international relations.</p>
+
+<h2 class="text-3xl font-medium mb-4 mt-12 text-charcoal" style="font-family: 'Cormorant Garamond', serif">Chinese Students as Cultural Ambassadors</h2>
+<p class="text-lg leading-relaxed text-warm-gray mb-6">Over 200,000 Chinese students study in the UK, making China the largest source of international students. These students serve as cultural ambassadors, introducing UK students to Chinese culture, language, and perspectives.</p>
+
+<p class="text-lg leading-relaxed text-warm-gray mb-6">However, this cultural exchange is often one-sided. While UK students interact with Chinese peers on campus, few have the opportunity to experience China firsthand. This asymmetry limits UK students' ability to understand China's cultural complexity and global influence.</p>
+
+<h2 class="text-3xl font-medium mb-4 mt-12 text-charcoal" style="font-family: 'Cormorant Garamond', serif">Mandarin: The Language of Opportunity</h2>
+<p class="text-lg leading-relaxed text-warm-gray mb-6">Mandarin Chinese has become the world's second most studied language, with over 200 million learners globally. For UK students, Mandarin proficiency is increasingly valuable across industries:</p>
+
+<ul class="list-disc list-inside space-y-3 text-lg text-warm-gray mb-6 ml-4">
+  <li><strong>Business:</strong> Companies operating in China seek employees who can navigate Chinese business culture and communicate in Mandarin.</li>
+  <li><strong>Diplomacy:</strong> The Foreign Office prioritizes Mandarin speakers for China-related positions.</li>
+  <li><strong>Academia:</strong> Research collaboration with Chinese institutions requires language skills and cultural understanding.</li>
+  <li><strong>Technology:</strong> Understanding Chinese tech ecosystems requires engaging with Chinese-language sources and networks.</li>
+</ul>
+
+<h2 class="text-3xl font-medium mb-4 mt-12 text-charcoal" style="font-family: 'Cormorant Garamond', serif">Cultural Intelligence as Career Asset</h2>
+<p class="text-lg leading-relaxed text-warm-gray mb-6">For UK students, developing China cultural intelligence—understanding Chinese values, communication styles, and social norms—is becoming a valuable career asset. This goes beyond language skills to include:</p>
+
+<ul class="list-disc list-inside space-y-3 text-lg text-warm-gray mb-6 ml-4">
+  <li><strong>Relationship Building (Guanxi):</strong> Understanding how Chinese business relationships are built and maintained.</li>
+  <li><strong>Face (Mianzi):</strong> Navigating the complex dynamics of respect, reputation, and social harmony.</li>
+  <li><strong>Long-term Thinking:</strong> Appreciating China's emphasis on long-term relationships over short-term transactions.</li>
+  <li><strong>Indirect Communication:</strong> Understanding Chinese communication styles that prioritize harmony and context.</li>
+</ul>
+
+<h2 class="text-3xl font-medium mb-4 mt-12 text-charcoal" style="font-family: 'Cormorant Garamond', serif">The Limits of Soft Power</h2>
+<p class="text-lg leading-relaxed text-warm-gray mb-6">Despite China's cultural successes, its soft power faces limitations. International perceptions of China remain mixed, with concerns about human rights, censorship, and political freedom tempering admiration for economic achievements.</p>
+
+<p class="text-lg leading-relaxed text-warm-gray mb-6">For UK students, understanding both China's cultural appeal and its limitations is essential for nuanced analysis. China's rise is neither inevitable triumph nor imminent collapse—it's a complex, multifaceted phenomenon that requires careful study.</p>
+
+<h2 class="text-3xl font-medium mb-4 mt-12 text-charcoal" style="font-family: 'Cormorant Garamond', serif">Building Cross-Cultural Competence</h2>
+<p class="text-lg leading-relaxed text-warm-gray mb-6">The 21st century will be defined by UK-China cultural exchange and competition. UK students who develop deep China cultural competence—through language study, cultural immersion, and professional engagement—will be positioned to lead in this new era.</p>
+
+<p class="text-lg leading-relaxed text-warm-gray mb-6">Programs like NEXUS CHINA provide UK students with immersive cultural experiences, from visiting Chinese tech companies to engaging with Chinese students and professionals. This firsthand exposure builds the cultural intelligence that employers increasingly value.</p>
+
+<div class="bg-champagne/10 border-l-4 border-champagne p-6 my-8">
+  <h3 class="text-2xl font-medium mb-4 text-charcoal" style="font-family: 'Cormorant Garamond', serif">Experience Chinese Culture Firsthand</h3>
+  <p class="text-lg text-warm-gray mb-4">NEXUS CHINA programs combine professional site visits with cultural immersion, from traditional tea ceremonies to contemporary art galleries. Build the cultural intelligence that sets you apart.</p>
+  <a href="/programs" class="inline-block bg-charcoal text-champagne px-8 py-3 hover:bg-charcoal/90 transition-colors">
+    View Programs
+  </a>
+</div>
+      `
+    },
+    "china-global-infrastructure-belt-road-2025": {
+      title: "China's Belt and Road Initiative: Reshaping Global Infrastructure",
+      author: "Prof. Jonathan Clarke",
+      date: "September 5, 2025",
+      readTime: "12 min read",
+      category: "Global Trends",
+      image: "https://images.unsplash.com/photo-1464938050520-ef2270bb8ce8?w=800&q=80",
+      content: `
+<p class="text-xl leading-relaxed text-warm-gray mb-8">By 2025, China's Belt and Road Initiative (BRI) has invested over $1 trillion in infrastructure projects across 150 countries, fundamentally reshaping global trade, development, and geopolitics. For UK students considering careers in international development, finance, or policy, understanding the BRI is essential.</p>
+
+<h2 class="text-3xl font-medium mb-4 mt-12 text-charcoal" style="font-family: 'Cormorant Garamond', serif">The Scope of the Belt and Road</h2>
+<p class="text-lg leading-relaxed text-warm-gray mb-6">Launched in 2013, the Belt and Road Initiative represents the most ambitious infrastructure program in human history. The BRI encompasses:</p>
+
+<ul class="list-disc list-inside space-y-3 text-lg text-warm-gray mb-6 ml-4">
+  <li><strong>Transportation:</strong> High-speed railways, ports, highways, and airports connecting Asia, Europe, Africa, and Latin America.</li>
+  <li><strong>Energy:</strong> Power plants, transmission lines, and renewable energy projects providing electricity to millions.</li>
+  <li><strong>Digital Infrastructure:</strong> Fiber optic cables, 5G networks, and data centers creating a "Digital Silk Road."</li>
+  <li><strong>Industrial Parks:</strong> Special economic zones promoting manufacturing and trade.</li>
+</ul>
+
+<p class="text-lg leading-relaxed text-warm-gray mb-6">The scale is staggering: over 3,000 projects in 150 countries, involving hundreds of billions of dollars in Chinese financing. No other country or institution has attempted infrastructure development on this scale.</p>
+
+<h2 class="text-3xl font-medium mb-4 mt-12 text-charcoal" style="font-family: 'Cormorant Garamond', serif">Flagship Projects</h2>
+<p class="text-lg leading-relaxed text-warm-gray mb-6"><strong>China-Pakistan Economic Corridor (CPEC):</strong> A $62 billion investment transforming Pakistan's infrastructure, from highways and railways to power plants and ports. CPEC represents China's largest single BRI investment and demonstrates the initiative's transformative potential.</p>
+
+<p class="text-lg leading-relaxed text-warm-gray mb-6"><strong>Piraeus Port, Greece:</strong> Chinese state-owned COSCO transformed Greece's largest port into the Mediterranean's busiest, demonstrating how Chinese investment can revitalize European infrastructure.</p>
+
+<p class="text-lg leading-relaxed text-warm-gray mb-6"><strong>Jakarta-Bandung High-Speed Railway:</strong> Southeast Asia's first high-speed railway, built with Chinese technology and financing, showcases China's ability to export advanced infrastructure to developing countries.</p>
+
+<p class="text-lg leading-relaxed text-warm-gray mb-6"><strong>Mombasa-Nairobi Railway, Kenya:</strong> This modern railway has cut travel time between Kenya's capital and largest port from 12 hours to 4 hours, facilitating trade and economic development.</p>
+
+<h2 class="text-3xl font-medium mb-4 mt-12 text-charcoal" style="font-family: 'Cormorant Garamond', serif">The Debt Trap Debate</h2>
+<p class="text-lg leading-relaxed text-warm-gray mb-6">The BRI has faced criticism for creating "debt traps"—situations where countries cannot repay Chinese loans and must cede strategic assets. The most cited example is Sri Lanka's Hambantota Port, which Sri Lanka leased to China for 99 years after defaulting on loans.</p>
+
+<p class="text-lg leading-relaxed text-warm-gray mb-6">However, the reality is more nuanced. Research shows that BRI debt is often more sustainable than critics claim, and many countries actively seek Chinese financing because Western institutions offer insufficient infrastructure investment. For UK students, understanding this debate requires moving beyond simplistic narratives to analyze specific projects and their economic impacts.</p>
+
+<h2 class="text-3xl font-medium mb-4 mt-12 text-charcoal" style="font-family: 'Cormorant Garamond', serif">UK-China Infrastructure Cooperation</h2>
+<p class="text-lg leading-relaxed text-warm-gray mb-6">The UK has engaged cautiously with the BRI. While the UK was the first major Western country to join the Asian Infrastructure Investment Bank (AIIB), Britain's BRI participation has been limited by security concerns and US pressure.</p>
+
+<p class="text-lg leading-relaxed text-warm-gray mb-6">However, UK companies have participated in BRI projects, particularly in legal services, project management, and financial advisory. This creates opportunities for UK graduates who understand both British professional standards and Chinese infrastructure strategies.</p>
+
+<h2 class="text-3xl font-medium mb-4 mt-12 text-charcoal" style="font-family: 'Cormorant Garamond', serif">Career Opportunities in BRI Projects</h2>
+<p class="text-lg leading-relaxed text-warm-gray mb-6">The BRI creates diverse career opportunities for UK graduates:</p>
+
+<ul class="list-disc list-inside space-y-3 text-lg text-warm-gray mb-6 ml-4">
+  <li><strong>Project Management:</strong> Managing complex infrastructure projects that span multiple countries and stakeholders.</li>
+  <li><strong>Financial Analysis:</strong> Evaluating BRI project financing, debt sustainability, and economic impacts.</li>
+  <li><strong>Legal Services:</strong> Navigating the complex legal frameworks governing international infrastructure projects.</li>
+  <li><strong>Environmental Consulting:</strong> Assessing and mitigating environmental impacts of large-scale infrastructure development.</li>
+  <li><strong>Policy Advisory:</strong> Helping governments and international organizations engage with the BRI strategically.</li>
+</ul>
+
+<h2 class="text-3xl font-medium mb-4 mt-12 text-charcoal" style="font-family: 'Cormorant Garamond', serif">The Green Belt and Road</h2>
+<p class="text-lg leading-relaxed text-warm-gray mb-6">In response to environmental criticisms, China has committed to making the BRI "green." This includes:</p>
+
+<ul class="list-disc list-inside space-y-3 text-lg text-warm-gray mb-6 ml-4">
+  <li><strong>Renewable Energy:</strong> Prioritizing solar, wind, and hydroelectric projects over coal-fired power plants.</li>
+  <li><strong>Green Finance:</strong> Establishing environmental standards for BRI project financing.</li>
+  <li><strong>Biodiversity Protection:</strong> Incorporating environmental impact assessments into project planning.</li>
+  <li><strong>Technology Transfer:</strong> Sharing Chinese green technology with BRI partner countries.</li>
+</ul>
+
+<p class="text-lg leading-relaxed text-warm-gray mb-6">For UK students interested in sustainability, the Green Belt and Road represents a massive opportunity to influence global infrastructure development toward environmental sustainability.</p>
+
+<h2 class="text-3xl font-medium mb-4 mt-12 text-charcoal" style="font-family: 'Cormorant Garamond', serif">Geopolitical Implications</h2>
+<p class="text-lg leading-relaxed text-warm-gray mb-6">The BRI is not just about infrastructure—it's about reshaping global economic and political relationships. China is creating new trade routes, financial institutions, and diplomatic networks that challenge Western-dominated post-World War II order.</p>
+
+<p class="text-lg leading-relaxed text-warm-gray mb-6">For the UK, this creates both challenges and opportunities. The UK must navigate between maintaining its "special relationship" with the US and engaging economically with China. UK students who understand this complex geopolitical landscape will be valuable to government, business, and international organizations.</p>
+
+<h2 class="text-3xl font-medium mb-4 mt-12 text-charcoal" style="font-family: 'Cormorant Garamond', serif">The Future of Global Development</h2>
+<p class="text-lg leading-relaxed text-warm-gray mb-6">The BRI represents a new model of development financing—one that prioritizes infrastructure investment over policy conditionality. Whether this model succeeds will shape global development for decades.</p>
+
+<p class="text-lg leading-relaxed text-warm-gray mb-6">For UK students, understanding the BRI is essential for careers in international development, finance, policy, and business. The initiative is creating new trade routes, reshaping geopolitics, and demonstrating China's growing global influence.</p>
+
+<p class="text-lg leading-relaxed text-warm-gray mb-6">Programs like NEXUS CHINA provide UK students with firsthand exposure to BRI projects, from visiting infrastructure sites to meeting with project managers and policy makers. This experience builds the expertise that employers increasingly seek.</p>
+
+<div class="bg-champagne/10 border-l-4 border-champagne p-6 my-8">
+  <h3 class="text-2xl font-medium mb-4 text-charcoal" style="font-family: 'Cormorant Garamond', serif">Understand China's Global Infrastructure Strategy</h3>
+  <p class="text-lg text-warm-gray mb-4">NEXUS CHINA programs include visits to BRI project sites, discussions with Chinese infrastructure companies, and analysis of China's global development strategy. Gain the perspective that sets you apart.</p>
+  <a href="/contact" class="inline-block bg-charcoal text-champagne px-8 py-3 hover:bg-charcoal/90 transition-colors">
+    Learn More
+  </a>
+</div>
+      `
     }
   };
 
@@ -459,9 +805,9 @@ export default function InsightArticle() {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO 
-        title={article.title}
-        description={article.title}
-        keywords="China insights, business analysis, tech innovation"
+        title={`${article.title} | NEXUS CHINA Insights`}
+        description={articleSEO[slug || ""]?.description || article.title}
+        keywords={articleSEO[slug || ""]?.keywords || "China insights, business analysis, tech innovation, UK students China"}
         canonical={`https://nexuschina.com/insights/${slug}`}
       />
       <Navbar />
@@ -520,6 +866,23 @@ export default function InsightArticle() {
               className="prose prose-lg max-w-none"
               dangerouslySetInnerHTML={{ __html: article.content }}
             />
+          </div>
+        </section>
+
+        {/* Social Share */}
+        <section className="py-12 border-t border-warm-gray/20">
+          <div className="container max-w-4xl">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-6 bg-champagne/10 p-6 rounded-lg">
+              <div>
+                <h3 className="text-xl font-medium mb-2 text-charcoal" style={{ fontFamily: "'Cormorant Garamond', serif" }}>Share This Article</h3>
+                <p className="text-warm-gray">Help others discover insights about China's rising influence</p>
+              </div>
+              <SocialShare 
+                url={`https://nexuschina.com/insights/${slug}`}
+                title={article.title}
+                description={articleSEO[slug || ""]?.description || article.title}
+              />
+            </div>
           </div>
         </section>
 
