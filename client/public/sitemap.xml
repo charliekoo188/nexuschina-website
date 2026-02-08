@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Main Pages -->
   <url>
     <loc>https://nexuschina.com/</loc>
     <lastmod>2026-02-08</lastmod>
@@ -37,27 +38,77 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nexuschina.com/insights/china-ai-revolution</loc>
+    <loc>https://nexuschina.com/contact</loc>
     <lastmod>2026-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Insights Articles -->
+  <url>
+    <loc>https://nexuschina.com/insights/china-ai-revolution</loc>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://nexuschina.com/insights/byd-global-expansion</loc>
-    <lastmod>2026-02-08</lastmod>
+    <lastmod>2025-12-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://nexuschina.com/insights/alumni-spotlight-khalid</loc>
-    <lastmod>2026-02-08</lastmod>
+    <loc>https://nexuschina.com/insights/khalid-schwarzman-scholars</loc>
+    <lastmod>2025-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://nexuschina.com/contact</loc>
-    <lastmod>2026-02-08</lastmod>
+    <loc>https://nexuschina.com/insights/china-green-tech-ecosystem</loc>
+    <lastmod>2025-10-10</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://nexuschina.com/insights/uk-china-relations-career</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://nexuschina.com/insights/inside-bytedance</loc>
+    <lastmod>2025-09-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://nexuschina.com/insights/sino-middle-eastern-partnerships</loc>
+    <lastmod>2025-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://nexuschina.com/insights/quantum-computing-china-breakthrough</loc>
+    <lastmod>2023-12-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://nexuschina.com/insights/china-ev-battery-dominance</loc>
+    <lastmod>2024-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://nexuschina.com/insights/chinese-cultural-soft-power</loc>
+    <lastmod>2025-03-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://nexuschina.com/insights/belt-road-initiative-opportunities</loc>
+    <lastmod>2024-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>

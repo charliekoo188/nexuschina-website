@@ -3,8 +3,8 @@ import { getSessionCookieOptions } from "./_core/cookies";
 import { systemRouter } from "./_core/systemRouter";
 import { protectedProcedure, publicProcedure, router } from "./_core/trpc";
 import { z } from "zod";
-import { createConsultation, getConsultationsByUserId, getAllConsultations } from "./consultations";
-import { createApplication, getApplicationsByUserId, getAllApplications } from "./applications";
+import { createConsultation, getConsultationsByUserId, getAllConsultations } from "./consultations.js";
+import { createApplication, getApplicationsByUserId, getAllApplications } from "./applications.js";
 
 export const appRouter = router({
     // if you need to use socket.io, read and register route in server/_core/index.ts, all api should start with '/api/' so that the gateway can route correctly

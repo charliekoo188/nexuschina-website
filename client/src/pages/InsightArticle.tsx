@@ -2,7 +2,9 @@
  * Page: Insight Article Detail
  */
 
-import SEO from "@/components/SEO";
+import SEO from '@/components/SEO';
+import ArticleSchema from '@/components/ArticleSchema';
+import RelatedArticles from '@/components/RelatedArticles';
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Calendar, Clock, ArrowLeft, Share2 } from "lucide-react";
@@ -810,6 +812,16 @@ export default function InsightArticle() {
         keywords={articleSEO[slug || ""]?.keywords || "China insights, business analysis, tech innovation, UK students China, Oxford Cambridge Imperial"}
         canonical={`https://nexuschina.com/insights/${slug}`}
       />
+      <ArticleSchema
+        headline={article.title}
+        description={articleSEO[slug || ""]?.description || `${article.title} - Comprehensive analysis for UK students from Oxford, Cambridge, and Imperial.`}
+        author={article.author}
+        datePublished={new Date(article.date).toISOString()}
+        image={article.image}
+        url={`https://nexuschina.com/insights/${slug}`}
+        keywords={articleSEO[slug || ""]?.keywords?.split(', ') || []}
+        category={article.category}
+      />
       <Navbar />
       
       <main className="pt-20">
@@ -898,6 +910,101 @@ export default function InsightArticle() {
           </div>
         </section>
       </main>
+
+      <RelatedArticles
+        currentSlug={slug || ""}
+        currentCategory={article.category}
+        allArticles={[
+          {
+            slug: "china-ai-revolution",
+            title: "China's AI Revolution: What Western Leaders Need to Know",
+            category: "Technology",
+            readTime: "8 min read",
+            image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&q=80",
+            excerpt: "China surpasses the US in AI patent applications for the third consecutive year. Explore the key drivers and implications."
+          },
+          {
+            slug: "byd-global-expansion",
+            title: "BYD's Global Expansion: Lessons for International Investors",
+            category: "Business",
+            readTime: "6 min read",
+            image: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=800&q=80",
+            excerpt: "BYD's rise from battery manufacturer to world's leading EV producer offers invaluable lessons for investors."
+          },
+          {
+            slug: "khalid-schwarzman-scholars",
+            title: "Alumni Spotlight: From NEXUS CHINA to Tsinghua's Schwarzman Scholars",
+            category: "Success Stories",
+            readTime: "5 min read",
+            image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800&q=80",
+            excerpt: "Meet Khalid Al-Mansoori, who turned down Yale and Stanford after experiencing China through NEXUS CHINA."
+          },
+          {
+            slug: "china-green-tech-ecosystem",
+            title: "Understanding China's Green Tech Ecosystem",
+            category: "Sustainability",
+            readTime: "10 min read",
+            image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80",
+            excerpt: "China dominates solar manufacturing, EV production, and renewable energy. Explore the green tech ecosystem."
+          },
+          {
+            slug: "uk-china-relations-career",
+            title: "Why UK-China Relations Matter for Your Career",
+            category: "Policy",
+            readTime: "7 min read",
+            image: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=800&q=80",
+            excerpt: "Following PM Starmer's Beijing visit, UK-China relations enter a new phase. Understand the career implications."
+          },
+          {
+            slug: "inside-bytedance",
+            title: "Inside ByteDance: A Day at China's Most Innovative Tech Giant",
+            category: "Program Insights",
+            readTime: "6 min read",
+            image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&q=80",
+            excerpt: "A behind-the-scenes look at ByteDance's Beijing headquarters through NEXUS CHINA's program."
+          },
+          {
+            slug: "sino-middle-eastern-partnerships",
+            title: "The Future of Sino-Middle Eastern Partnerships",
+            category: "Global Trends",
+            readTime: "8 min read",
+            image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80",
+            excerpt: "Middle Eastern capital meets Chinese innovation in green energy, fintech, and infrastructure."
+          },
+          {
+            slug: "quantum-computing-china-breakthrough",
+            title: "China's Quantum Computing Breakthrough: What UK Students Need to Know",
+            category: "Technology",
+            readTime: "9 min read",
+            image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&q=80",
+            excerpt: "China achieves quantum supremacy with 66-qubit computer. Essential knowledge for UK tech students."
+          },
+          {
+            slug: "china-ev-battery-dominance",
+            title: "How China Became the World's EV Battery Powerhouse",
+            category: "Sustainability",
+            readTime: "11 min read",
+            image: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=800&q=80",
+            excerpt: "China controls 80% of global EV battery production. Understand the implications for energy transition."
+          },
+          {
+            slug: "chinese-cultural-soft-power",
+            title: "China's Cultural Soft Power: From TikTok to Global Influence",
+            category: "Global Trends",
+            readTime: "10 min read",
+            image: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800&q=80",
+            excerpt: "China's cultural influence expands beyond diplomacy. From TikTok to dramas, reshaping global culture."
+          },
+          {
+            slug: "belt-road-initiative-opportunities",
+            title: "China's Belt and Road Initiative: Reshaping Global Infrastructure",
+            category: "Global Trends",
+            readTime: "12 min read",
+            image: "https://images.unsplash.com/photo-1464938050520-ef2270bb8ce8?w=800&q=80",
+            excerpt: "$1 trillion invested across 150 countries. BRI fundamentally reshapes global trade and development."
+          }
+        ]}
+      />
 
       <Footer />
     </div>
