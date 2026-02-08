@@ -14,6 +14,8 @@ import Insights from "./pages/Insights";
 import InsightArticle from "./pages/InsightArticle";
 import { GoogleAnalytics } from "./components/GoogleAnalytics";
 import { MicrosoftClarity } from "./components/MicrosoftClarity";
+import ScrollToTop from "./components/ScrollToTop";
+import ScrollToTopOnNavigate from "./components/ScrollToTopOnNavigate";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -49,6 +51,8 @@ function App() {
           <GoogleAnalytics />
           <MicrosoftClarity />
           <Toaster />
+          <ScrollToTop />
+          <ScrollToTopOnNavigate />
           <Router />
         </TooltipProvider>
       </ThemeProvider>

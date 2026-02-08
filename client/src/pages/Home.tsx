@@ -7,6 +7,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollAnimation from "@/components/ScrollAnimation";
 import SEO from "@/components/SEO";
+import StructuredData from "@/components/StructuredData";
 import { ArrowRight, Building2, GraduationCap, Heart, Landmark, Users, Globe } from "lucide-react";
 import { Link } from "wouter";
 import { useEffect, useRef } from "react";
@@ -74,6 +75,25 @@ export default function Home() {
         keywords="China immersion program, UK students China, Oxford Cambridge China, elite education China, China study tour, enterprise visits China, cultural exchange, tech innovation China"
         ogImage="https://files.manuscdn.com/user_upload_by_module/session_file/310519663326825618/NnGLErfoixaHjfMX.png"
         canonical="https://nexuschina.com/"
+      />
+      <StructuredData 
+        type="organization" 
+        data={{
+          sameAs: [
+            "https://www.linkedin.com/company/nexuschina",
+            "https://twitter.com/nexuschina"
+          ]
+        }} 
+      />
+      <StructuredData 
+        type="website" 
+        data={{
+          potentialAction: {
+            "@type": "SearchAction",
+            target: "https://nexuschina.com/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        }} 
       />
       <Navbar />
       
