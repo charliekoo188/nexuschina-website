@@ -2,14 +2,89 @@
  * Page: Experience - Testimonials and gallery
  */
 
+import { useState } from "react";
 import ScrollAnimation from "@/components/ScrollAnimation";
 import SEO from "@/components/SEO";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import GalleryDetailDialog, { GalleryDetail } from "@/components/GalleryDetailDialog";
 import { Quote } from "lucide-react";
 import { Link } from "wouter";
 
+// Extended gallery data with full details
+const galleryDetailsData: Record<string, GalleryDetail> = {
+  "Innovation Lab Visit": {
+    image: "https://private-us-east-1.manuscdn.com/sessionFile/T0FKfLVl6xm6qptnhvYDPe/sandbox/mDBVNQzQ0g3EuLqlvpEZEQ-img-2_1770288257000_na1fn_dGVjaC1pbm5vdmF0aW9u.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvVDBGS2ZMVmw2eG02cXB0bmh2WURQZS9zYW5kYm94L21EQlZOUXpRMGczRXVMcWx2cEVaRVEtaW1nLTJfMTc3MDI4ODI1NzAwMF9uYTFmbl9kR1ZqYUMxcGJtNXZkbUYwYVc5dS5wbmc~eC1vc3MtcHJvY2Vzcz1pbWFnZS9yZXNpemUsd18xOTIwLGhfMTkyMC9mb3JtYXQsd2VicC9xdWFsaXR5LHFfODAiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3OTg3NjE2MDB9fX1dfQ__&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=WDb6hittQQbTNQ5CH7YukOJFynyXisVSIYq3CqXh5REn0~-Puh4Fjipks8XBP0tyuTISc-F5Pd3NO8EMIL4ciYUGbG2AsgZH3unWSqF9bUAz8A4bDo1Od7YWwc5OFiufM9K9iW76ogqLZcn99ElJjoTb0PYwm-FZx144~7d7vFbS0bG5wcEVhMMKbvLDUuPwtIJQQBuTqL2qXAvOYJZe069~-A~rO~XpnXEb0PPQ-MPugHtjXBaPMpsUIwhqLUulKLnHuAjC1cATcde4oIBkHXQKk06jtmYC6DzymsFrRNKv0yTDRxJvJu5dhQRxeX~i0N1zc2IE~q86AUq7ZJZV-Q__",
+    caption: "Innovation Lab Visit",
+    fullDescription: "Our participants gained exclusive access to one of China's leading AI research laboratories, where they witnessed cutting-edge developments in machine learning, computer vision, and natural language processing. This hands-on experience included demonstrations of proprietary algorithms, discussions with lead researchers, and insights into how Chinese tech giants are pushing the boundaries of artificial intelligence.",
+    location: "Beijing, China",
+    date: "July 2025",
+    participants: "15 students from Oxford, Cambridge, and Imperial",
+    highlights: [
+      "Private tour of AI research facilities with access to live demonstrations",
+      "Q&A session with lead AI researchers and product managers",
+      "Hands-on workshop on China's approach to AI development and ethics",
+      "Networking dinner with startup founders in the AI ecosystem",
+      "Insights into China's national AI strategy and its global implications"
+    ]
+  },
+  "Networking Dinner": {
+    image: "https://private-us-east-1.manuscdn.com/sessionFile/T0FKfLVl6xm6qptnhvYDPe/sandbox/mDBVNQzQ0g3EuLqlvpEZEQ-img-4_1770288259000_na1fn_ZWxpdGUtZXhwZXJpZW5jZQ.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvVDBGS2ZMVmw2eG02cXB0bmh2WURQZS9zYW5kYm94L21EQlZOUXpRMGczRXVMcWx2cEVaRVEtaW1nLTRfMTc3MDI4ODI1OTAwMF9uYTFmbl9aV3hwZEdVdFpYaHdaWEpwWlc1alpRLnBuZz94LW9zcy1wcm9jZXNzPWltYWdlL3Jlc2l6ZSx3XzE5MjAsaF8xOTIwL2Zvcm1hdCx3ZWJwL3F1YWxpdHkscV84MCIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc5ODc2MTYwMH19fV19&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=ZkwblgVWMoS1yqiiqErRMMbbtJBBUKHGwMDbSok-vQ2Hj7KdqySJKsb7e5bp~kGi1PV7wuty0ICE3inywOmXaRS4gS~50hD2fmIpg~wtyJQ87LYS-TvYd1kcGzvHBr1e56awLkEAYrzTrdEiwE8XRkHu2KtsdTWZOi6EZHfxkcWWZGLL1Bab1RIEAMY6udIGwC2Gw5NjvOG57lXXmWaxjUyXfUlRUaql9npRy2ATofLxGdWu85H5qr2IF1Rhz4jwbdsgWijqzSCO7AFj70dw-UMNFs-0lwA-0Hg6SOnd-DkUQuiGFScFcUhXWQNaPvOLp~vUBjz2ot0GPDzwWN8wKw__",
+    caption: "Networking Dinner",
+    fullDescription: "An elegant networking dinner brought together NEXUS CHINA participants with Chinese entrepreneurs, investors, and industry leaders. Set in a private dining room overlooking Shanghai's iconic skyline, this intimate gathering facilitated meaningful conversations about China's business landscape, investment opportunities, and cross-cultural collaboration. Participants forged lasting connections that extend far beyond the program.",
+    location: "Shanghai, China",
+    date: "August 2025",
+    participants: "20 participants + 15 Chinese business leaders",
+    highlights: [
+      "Intimate dinner with successful Chinese entrepreneurs and VCs",
+      "Roundtable discussions on UK-China business opportunities",
+      "Insights into Chinese business culture and negotiation strategies",
+      "Exchange of contact information and follow-up mentorship opportunities",
+      "Traditional Chinese cuisine experience with cultural context"
+    ]
+  },
+  "The Forbidden City": {
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663326825618/oWDsqYgpejVmiIEs.jpg",
+    caption: "The Forbidden City",
+    fullDescription: "NEXUS CHINA participants enjoyed a private, after-hours tour of the Forbidden City, China's most iconic cultural landmark. Led by expert historians and conservation specialists, this exclusive experience provided unparalleled access to restricted areas and rare artifacts. Participants gained deep insights into Chinese imperial history, architectural philosophy, and the ongoing efforts to preserve this UNESCO World Heritage Site for future generations.",
+    location: "Beijing, China",
+    date: "June 2025",
+    participants: "12 students from UK elite institutions",
+    highlights: [
+      "Private after-hours access to normally restricted palace halls",
+      "Expert-led tour by Forbidden City Museum curators",
+      "Close-up viewing of rare imperial artifacts and artworks",
+      "Insights into Chinese dynastic history and cultural heritage preservation",
+      "Photography opportunities in iconic locations without crowds"
+    ]
+  }
+};
+
 export default function Experience() {
+  const [selectedGalleryItem, setSelectedGalleryItem] = useState<GalleryDetail | null>(null);
+  const [galleryDialogOpen, setGalleryDialogOpen] = useState(false);
+
+  const handleGalleryClick = (caption: string, image: string) => {
+    const fullDetails = galleryDetailsData[caption];
+    if (fullDetails) {
+      setSelectedGalleryItem(fullDetails);
+    } else {
+      // Fallback for gallery items without full details
+      setSelectedGalleryItem({
+        image,
+        caption,
+        fullDescription: `This memorable moment from our ${caption} showcases the unique experiences that NEXUS CHINA provides to participants. Through carefully curated visits and exclusive access, we create transformative opportunities for UK students to engage with China's innovation ecosystem and cultural heritage.`,
+        highlights: [
+          "Exclusive access to premier institutions and cultural sites",
+          "Expert-led tours and discussions with industry leaders",
+          "Networking opportunities with Chinese innovators and entrepreneurs",
+          "Hands-on experiences and interactive workshops",
+          "Cultural immersion and cross-cultural dialogue"
+        ]
+      });
+    }
+    setGalleryDialogOpen(true);
+  };
   const testimonials = [
     {
       name: "Emily Chen",
@@ -163,7 +238,8 @@ export default function Experience() {
               {gallery.map((item, index) => (
                 <div 
                   key={index}
-                  className="group relative overflow-hidden rounded-sm shadow-md hover:shadow-xl transition-luxury"
+                  className="group relative overflow-hidden rounded-sm shadow-md hover:shadow-xl transition-luxury cursor-pointer"
+                  onClick={() => handleGalleryClick(item.caption, item.image)}
                 >
                   <img 
                     src={item.image}
@@ -392,6 +468,13 @@ export default function Experience() {
       </main>
 
       <Footer />
+      
+      {/* Gallery Detail Dialog */}
+      <GalleryDetailDialog 
+        item={selectedGalleryItem}
+        open={galleryDialogOpen}
+        onOpenChange={setGalleryDialogOpen}
+      />
     </div>
   );
 }

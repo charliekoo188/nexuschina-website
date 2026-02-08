@@ -76,16 +76,79 @@ export default function About() {
                 For Western elites—particularly those from Oxford, Cambridge, Imperial, and leading UK institutions—deep engagement with contemporary China is no longer optional. It is a strategic imperative.
               </p>
               
-              <div className="luxury-card p-8">
-                <h3 className="text-2xl font-medium mb-4 text-charcoal" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
-                  The Geopolitical Reality
+              {/* Global Leaders on China */}
+              <div className="space-y-6">
+                <h3 className="text-2xl font-medium mb-6 text-charcoal text-center" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+                  What Global Leaders Say About China
                 </h3>
-                <p className="mb-4">
-                  In January 2026, UK Prime Minister Keir Starmer's visit to Beijing marked a pivotal reset in UK-China relations. His emphasis on "pragmatic engagement" and "consistent, respectful dialogue" signals a recognition that China is not a challenge to be managed from afar, but a partner to be understood deeply.
-                </p>
-                <p>
-                  As Starmer stated: "We want a serious and pragmatic relationship with China... one that allows us to engage frankly on areas where we disagree, but also to find common ground." This diplomatic shift reflects a broader truth: the West's future prosperity depends on informed, nuanced understanding of China.
-                </p>
+                
+                {/* Keir Starmer Quote */}
+                <div className="luxury-card p-8 border-l-4 border-champagne">
+                  <p className="text-lg italic text-charcoal mb-4">
+                    "We want a serious and pragmatic relationship with China... one that allows us to engage frankly on areas where we disagree, but also to find common ground. China's success matters to the UK, and the UK's success matters to China."
+                  </p>
+                  <div className="flex items-center gap-4">
+                    <div className="w-16 h-16 rounded-full bg-champagne/20 flex items-center justify-center">
+                      <span className="text-2xl font-medium text-charcoal">KS</span>
+                    </div>
+                    <div>
+                      <p className="font-medium text-charcoal">Keir Starmer</p>
+                      <p className="text-sm text-warm-gray">UK Prime Minister</p>
+                      <p className="text-xs text-muted-foreground">Beijing Visit, January 2026</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Ray Dalio Quote */}
+                <div className="luxury-card p-8 border-l-4 border-rose-gold">
+                  <p className="text-lg italic text-charcoal mb-4">
+                    "Not understanding China and how it works is like an investor in 1950 not understanding the United States. It would be crazy. China is the second-largest economy in the world, and it's going to be the largest economy in the world. To not understand it is to be economically illiterate."
+                  </p>
+                  <div className="flex items-center gap-4">
+                    <div className="w-16 h-16 rounded-full bg-rose-gold/20 flex items-center justify-center">
+                      <span className="text-2xl font-medium text-charcoal">RD</span>
+                    </div>
+                    <div>
+                      <p className="font-medium text-charcoal">Ray Dalio</p>
+                      <p className="text-sm text-warm-gray">Founder, Bridgewater Associates</p>
+                      <p className="text-xs text-muted-foreground">Author of "Principles for Dealing with the Changing World Order"</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Henry Kissinger Quote */}
+                <div className="luxury-card p-8 border-l-4 border-champagne">
+                  <p className="text-lg italic text-charcoal mb-4">
+                    "The relationship between China and the United States will shape the 21st century. Understanding China is not an academic exercise—it is a geopolitical necessity. Those who master this understanding will lead the next era of global affairs."
+                  </p>
+                  <div className="flex items-center gap-4">
+                    <div className="w-16 h-16 rounded-full bg-champagne/20 flex items-center justify-center">
+                      <span className="text-2xl font-medium text-charcoal">HK</span>
+                    </div>
+                    <div>
+                      <p className="font-medium text-charcoal">Henry Kissinger</p>
+                      <p className="text-sm text-warm-gray">Former US Secretary of State</p>
+                      <p className="text-xs text-muted-foreground">Author of "On China" (1923-2023)</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Rishi Sunak Quote */}
+                <div className="luxury-card p-8 border-l-4 border-rose-gold">
+                  <p className="text-lg italic text-charcoal mb-4">
+                    "China is the world's second-largest economy, a permanent member of the UN Security Council, and an increasingly assertive power. We cannot simply ignore China's significance in world affairs. We need to engage robustly and pragmatically."
+                  </p>
+                  <div className="flex items-center gap-4">
+                    <div className="w-16 h-16 rounded-full bg-rose-gold/20 flex items-center justify-center">
+                      <span className="text-2xl font-medium text-charcoal">RS</span>
+                    </div>
+                    <div>
+                      <p className="font-medium text-charcoal">Rishi Sunak</p>
+                      <p className="text-sm text-warm-gray">Former UK Prime Minister</p>
+                      <p className="text-xs text-muted-foreground">Lord Mayor's Banquet Speech, November 2023</p>
+                    </div>
+                  </div>
+                </div>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-8">
