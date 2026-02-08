@@ -55,5 +55,10 @@
 - [x] 测试语言切换功能
 - [x] 测试表单提交功能
 - [x] 测试响应式布局
-- [ ] 保存 checkpoint
+- [x] 保存 checkpoint
 - [ ] 发布到永久域名
+
+## GitHub 同步配置
+- [x] 配置 Git remote 指向现有 GitHub 仓库
+- [x] 测试自动同步功能
+- [x] 验证代码推送到 GitHub
