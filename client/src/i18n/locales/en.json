@@ -1,0 +1,85 @@
+{
+  "nav": {
+    "home": "HOME",
+    "about": "ABOUT",
+    "programs": "PROGRAMS",
+    "experience": "EXPERIENCE",
+    "resources": "RESOURCES",
+    "insights": "INSIGHTS",
+    "contact": "CONTACT"
+  },
+  "home": {
+    "hero": {
+      "subtitle": "WHERE FUTURE LEADERS MEET MODERN CHINA",
+      "title": "Experience China's Future of Innovation",
+      "description": "Exclusive China immersion programs for elite students from Oxford, Cambridge, Imperial, and top UK private schools. Discover cutting-edge technology, world-class enterprises, premier academic institutions, and contemporary culture.",
+      "explorePrograms": "EXPLORE PROGRAMS",
+      "bookConsultation": "BOOK CONSULTATION"
+    },
+    "stats": {
+      "participants": "Elite Participants",
+      "partners": "Partner Organizations",
+      "satisfaction": "Satisfaction Rate",
+      "cities": "Cities Explored"
+    },
+    "features": {
+      "title": "Unparalleled Access",
+      "subtitle": "NEXUS CHINA opens doors to China's most prestigious institutions and innovative enterprises, providing experiences unavailable through conventional channels.",
+      "enterprise": {
+        "title": "Elite Enterprise Access",
+        "description": "Private tours and executive roundtables at ByteDance, Tencent, Alibaba, Huawei, and China's most innovative companies."
+      },
+      "academic": {
+        "title": "Premier Academic Institutions",
+        "description": "Exclusive engagement with Tsinghua, Peking University, and leading research centers shaping China's future."
+      },
+      "healthcare": {
+        "title": "Healthcare & Biotech Innovation",
+        "description": "Insights into China's rapidly advancing medical technology and precision medicine ecosystem."
+      },
+      "cultural": {
+        "title": "Cultural Immersion",
+        "description": "Privileged access to the Forbidden City, Temple of Heaven, and contemporary art institutions."
+      },
+      "networking": {
+        "title": "Elite Networking",
+        "description": "Connect with fellow Oxford, Cambridge, Imperial students and Chinese business leaders."
+      },
+      "perspective": {
+        "title": "Global Perspective",
+        "description": "Understand China's role in shaping the 21st century through firsthand experience."
+      }
+    },
+    "whyChina": {
+      "title": "Why China Matters",
+      "para1": "For the global elite seeking to understand the 21st century, deep engagement with contemporary China is no longer optional—it is essential. As this Eastern powerhouse advances with unprecedented velocity in technology, innovation, and global influence, those who fail to comprehend its trajectory risk being left behind.",
+      "para2": "China is not merely growing; it is redefining the future. From artificial intelligence and quantum computing to electric vehicles and renewable energy, Chinese enterprises and institutions are at the forefront of global innovation. The nation's commitment to technological advancement, coupled with massive investment in research and development, has created an ecosystem unlike any other.",
+      "para3": "Moreover, China welcomes the world with open arms. This is a nation eager to share its achievements, exchange ideas, and build bridges across cultures. For Western elites—particularly those at Oxford, Cambridge, Imperial, and top private schools—experiencing China firsthand is an investment in your future leadership. The insights gained here will shape your understanding of global dynamics for decades to come."
+    },
+    "cta": {
+      "title": "Begin Your Journey",
+      "description": "Join the next generation of global leaders who understand China. Our programs are limited to ensure exclusivity and deep engagement.",
+      "applyNow": "APPLY NOW"
+    }
+  },
+  "footer": {
+    "description": "Exclusive China immersion programs for elite UK students. Experience cutting-edge innovation, world-class enterprises, and contemporary culture.",
+    "quickLinks": "Quick Links",
+    "contact": "Contact",
+    "email": "Email",
+    "wechat": "WeChat",
+    "followUs": "Follow Us",
+    "copyright": "© 2026 NEXUS CHINA. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  },
+  "common": {
+    "learnMore": "Learn More",
+    "readMore": "Read More",
+    "apply": "Apply",
+    "submit": "Submit",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "success": "Success"
+  }
+}

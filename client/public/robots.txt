@@ -1,0 +1,11 @@
+# robots.txt for NEXUS CHINA
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://nexuschina.com/sitemap.xml
+
+# Disallow admin and API routes
+Disallow: /api/
+Disallow: /admin/
