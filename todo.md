@@ -72,3 +72,8 @@
 - [x] 添加结构化数据（Schema.org）
 - [x] 优化 sitemap 和 robots.txt
 - [x] 测试所有优化功能
+
+## Insights 文章 404 修复
+- [x] 检查 Insights 文章路由配置
+- [x] 修复文章页面 404 错误
+- [x] 测试所有文章链接
