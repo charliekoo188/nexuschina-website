@@ -1,17 +1,32 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
+import About from "@/pages/About";
+import Contact from "@/pages/Contact";
+import Programs from "@/pages/Programs";
+import Experience from "@/pages/Experience";
+import Resources from "@/pages/Resources";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
+import Insights from "./pages/Insights";
+import InsightArticle from "./pages/InsightArticle";
+import { GoogleAnalytics } from "./components/GoogleAnalytics";
+import { MicrosoftClarity } from "./components/MicrosoftClarity";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
   return (
     <Switch>
       <Route path={"/"} component={Home} />
-      <Route path={"/404"} component={NotFound} />
+      <Route path={"/about"} component={About} />
+      <Route path={"/insights"} component={Insights} />
+      <Route path={"/insights/:slug"} component={InsightArticle} />
+      <Route path={"/programs"} component={Programs} />
+      <Route path={"/experience"} component={Experience} />
+      <Route path={"/resources"} component={Resources} />
+      <Route path={"/contact"} component={Contact} />
       {/* Final fallback route */}
       <Route component={NotFound} />
     </Switch>
@@ -31,6 +46,8 @@ function App() {
         // switchable
       >
         <TooltipProvider>
+          <GoogleAnalytics />
+          <MicrosoftClarity />
           <Toaster />
           <Router />
         </TooltipProvider>

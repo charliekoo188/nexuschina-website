@@ -1,31 +1,252 @@
-import { useAuth } from "@/_core/hooks/useAuth";
-import { Button } from "@/components/ui/button";
-import { Loader2 } from "lucide-react";
-import { getLoginUrl } from "@/const";
-import { Streamdown } from 'streamdown';
-
-/**
- * All content in this page are only for example, replace with your own feature implementation
- * When building pages, remember your instructions in Frontend Workflow, Frontend Best Practices, Design Guide and Common Pitfalls
+/* NEXUS CHINA Design System V2
+ * Page: Home - Landing page with video hero
  */
+
+import { useAuth } from "@/_core/hooks/useAuth";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import ScrollAnimation from "@/components/ScrollAnimation";
+import SEO from "@/components/SEO";
+import { ArrowRight, Building2, GraduationCap, Heart, Landmark, Users, Globe } from "lucide-react";
+import { Link } from "wouter";
+import { useEffect, useRef } from "react";
+
 export default function Home() {
   // The userAuth hooks provides authentication state
   // To implement login/logout functionality, simply call logout() or redirect to getLoginUrl()
   let { user, loading, error, isAuthenticated, logout } = useAuth();
 
-  // If theme is switchable in App.tsx, we can implement theme toggling like this:
-  // const { theme, toggleTheme } = useTheme();
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(() => {
+        // Autoplay blocked, user interaction required
+      });
+    }
+  }, []);
+
+  const features = [
+    {
+      icon: Building2,
+      title: "Elite Enterprise Access",
+      description: "Private tours and executive roundtables at ByteDance, Tencent, Alibaba, Huawei, and China's most innovative companies."
+    },
+    {
+      icon: GraduationCap,
+      title: "Premier Academic Institutions",
+      description: "Exclusive engagement with Tsinghua, Peking University, and leading research centers shaping China's future."
+    },
+    {
+      icon: Heart,
+      title: "Healthcare & Biotech Innovation",
+      description: "Insights into China's rapidly advancing medical technology and precision medicine ecosystem."
+    },
+    {
+      icon: Landmark,
+      title: "Cultural Immersion",
+      description: "Privileged access to the Forbidden City, Temple of Heaven, and contemporary art institutions."
+    },
+    {
+      icon: Users,
+      title: "Elite Networking",
+      description: "Connect with fellow Oxford, Cambridge, Imperial students and Chinese business leaders."
+    },
+    {
+      icon: Globe,
+      title: "Global Perspective",
+      description: "Understand China's role in shaping the 21st century through firsthand experience."
+    }
+  ];
+
+  const stats = [
+    { number: "500+", label: "Elite Participants" },
+    { number: "50+", label: "Partner Organizations" },
+    { number: "98%", label: "Satisfaction Rate" },
+    { number: "15+", label: "Cities Explored" }
+  ];
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO 
+        title="NEXUS CHINA - Elite China Programs for UK Students"
+        description="Exclusive China immersion for Oxford, Cambridge & Imperial students. Access top tech firms, universities & cultural institutions."
+        keywords="China immersion program, UK students China, Oxford Cambridge China, elite education China, China study tour, enterprise visits China, cultural exchange, tech innovation China"
+        ogImage="https://files.manuscdn.com/user_upload_by_module/session_file/310519663326825618/NnGLErfoixaHjfMX.png"
+        canonical="https://nexuschina.com/"
+      />
+      <Navbar />
+      
       <main>
-        {/* Example: lucide-react for icons */}
-        <Loader2 className="animate-spin" />
-        Example Page
-        {/* Example: Streamdown for markdown rendering */}
-        <Streamdown>Any **markdown** content</Streamdown>
-        <Button variant="default">Example Button</Button>
+        {/* Video Hero Section */}
+        <section className="relative h-screen flex items-center justify-center overflow-hidden">
+          {/* Video Background */}
+          <video
+            ref={videoRef}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+          >
+            <source src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663326825618/qWPziPqbPoNtmLTN.mp4" type="video/mp4" />
+          </video>
+
+          {/* Subtle Gradient Overlay - minimal to keep video visible */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/40"></div>
+
+          {/* Hero Content */}
+          <div className="relative z-10 container text-center px-4">
+            <p className="text-xs md:text-sm font-medium tracking-[0.3em] uppercase mb-6 text-ivory fade-in-up" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}>
+              WHERE FUTURE LEADERS MEET MODERN CHINA
+            </p>
+            <h1 
+              className="text-5xl md:text-7xl lg:text-8xl font-medium mb-8 text-ivory fade-in-up leading-tight"
+              style={{ fontFamily: "'Cormorant Garamond', serif", animationDelay: "0.2s", textShadow: '3px 3px 12px rgba(0,0,0,0.9)' }}
+            >
+              Experience<br />
+              <span className="text-champagne">China's Future</span><br />
+              of Innovation
+            </h1>
+            <p className="text-base md:text-xl max-w-3xl mx-auto leading-relaxed mb-12 text-ivory fade-in-up" style={{ animationDelay: "0.4s", textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}>
+              Exclusive China immersion programs for elite students from Oxford, Cambridge, Imperial, and top UK private schools. Discover cutting-edge technology, world-class enterprises, premier academic institutions, and contemporary culture.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 fade-in-up" style={{ animationDelay: "0.6s" }}>
+              <Link href="/programs">
+                <button className="btn-luxury btn-luxury-primary">
+                  EXPLORE PROGRAMS <ArrowRight className="inline ml-2" size={18} />
+                </button>
+              </Link>
+              <Link href="/contact">
+                <button className="btn-luxury btn-luxury-secondary bg-transparent border-champagne text-champagne hover:bg-champagne hover:text-charcoal">
+                  BOOK CONSULTATION
+                </button>
+              </Link>
+            </div>
+          </div>
+
+          {/* Scroll Indicator */}
+          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <div className="w-6 h-10 border-2 border-champagne rounded-full flex items-start justify-center p-2">
+              <div className="w-1 h-3 bg-champagne rounded-full"></div>
+            </div>
+          </div>
+        </section>
+
+        {/* Stats Section */}
+        <section className="section-padding bg-ivory">
+          <div className="container">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+              {stats.map((stat, index) => (
+                <ScrollAnimation key={index} animation="fade-up" delay={index * 0.1}>
+                  <div>
+                    <p 
+                      className="text-5xl md:text-6xl font-medium mb-2 text-rose-gold"
+                      style={{ fontFamily: "'Cormorant Garamond', serif" }}
+                    >
+                      {stat.number}
+                    </p>
+                    <p className="text-sm font-medium tracking-wider uppercase text-warm-gray">
+                      {stat.label}
+                    </p>
+                  </div>
+                </ScrollAnimation>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Features Grid */}
+        <section className="section-padding bg-white">
+          <div className="container max-w-6xl">
+            <ScrollAnimation animation="fade-up">
+              <div className="text-center mb-16">
+                <h2 
+                  className="text-4xl md:text-5xl font-medium mb-4 text-charcoal"
+                  style={{ fontFamily: "'Cormorant Garamond', serif" }}
+                >
+                  Unparalleled Access
+                </h2>
+                <div className="luxury-divider"></div>
+                <p className="text-lg text-warm-gray max-w-2xl mx-auto">
+                  NEXUS CHINA opens doors to China's most prestigious institutions and innovative enterprises, providing experiences unavailable through conventional channels.
+                </p>
+              </div>
+            </ScrollAnimation>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {features.map((feature, index) => (
+                <ScrollAnimation key={index} animation="fade-up" delay={index * 0.1}>
+                  <div className="luxury-card p-8 text-center group">
+                    <div className="w-16 h-16 bg-champagne mx-auto mb-6 flex items-center justify-center group-hover:bg-rose-gold transition-colors duration-500">
+                      <feature.icon size={28} className="text-charcoal" />
+                    </div>
+                    <h3 
+                    className="text-xl font-medium mb-3 text-charcoal"
+                    style={{ fontFamily: "'Cormorant Garamond', serif" }}
+                  >
+                    {feature.title}
+                  </h3>
+                    <p className="text-sm leading-relaxed text-warm-gray">
+                      {feature.description}
+                    </p>
+                  </div>
+                </ScrollAnimation>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Why China Section */}
+        <section className="section-padding bg-charcoal text-ivory luxury-overlay">
+          <div className="container max-w-4xl">
+            <div className="text-center mb-12">
+              <h2 
+                className="text-4xl md:text-5xl font-medium mb-4 text-champagne"
+                style={{ fontFamily: "'Cormorant Garamond', serif" }}
+              >
+                Why China Matters
+              </h2>
+              <div className="luxury-divider"></div>
+            </div>
+
+            <div className="prose prose-lg prose-invert max-w-none">
+              <p className="text-lg leading-relaxed opacity-90 mb-6">
+                For the global elite seeking to understand the 21st century, deep engagement with contemporary China is no longer optional—it is essential. As this Eastern powerhouse advances with unprecedented velocity in technology, innovation, and global influence, those who fail to comprehend its trajectory risk being left behind.
+              </p>
+              <p className="text-lg leading-relaxed opacity-90 mb-6">
+                China is not merely growing; it is redefining the future. From artificial intelligence and quantum computing to electric vehicles and renewable energy, Chinese enterprises and institutions are at the forefront of global innovation. The nation's commitment to technological advancement, coupled with massive investment in research and development, has created an ecosystem unlike any other.
+              </p>
+              <p className="text-lg leading-relaxed opacity-90">
+                Moreover, China welcomes the world with open arms. This is a nation eager to share its achievements, exchange ideas, and build bridges across cultures. For Western elites—particularly those at Oxford, Cambridge, Imperial, and top private schools—experiencing China firsthand is an investment in your future leadership. The insights gained here will shape your understanding of global dynamics for decades to come.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="section-padding bg-champagne">
+          <div className="container max-w-3xl text-center">
+            <h2 
+              className="text-4xl md:text-5xl font-medium mb-6 text-charcoal"
+              style={{ fontFamily: "'Cormorant Garamond', serif" }}
+            >
+              Begin Your Journey
+            </h2>
+            <div className="luxury-line mb-6"></div>
+            <p className="text-lg leading-relaxed text-warm-gray mb-8">
+              Join the next generation of global leaders who understand China. Our programs are limited to ensure exclusivity and deep engagement.
+            </p>
+            <Link href="/contact">
+              <button className="btn-luxury btn-luxury-primary">
+                APPLY NOW <ArrowRight className="inline ml-2" size={18} />
+              </button>
+            </Link>
+          </div>
+        </section>
       </main>
+
+      <Footer />
     </div>
   );
 }
