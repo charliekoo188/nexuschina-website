@@ -255,7 +255,7 @@ function ProgramsContent() {
       duration: "10 Days",
       participants: "12-16 Students",
       locations: "Beijing, Shenzhen, Hangzhou",
-
+      rating: { value: 4.9, count: 89 },
       description: "Dive deep into China's tech ecosystem with exclusive visits to ByteDance, Huawei, Tencent, and emerging AI startups. Engage with C-suite executives and innovation teams.",
       highlights: [
         "Private tours of ByteDance and Tencent headquarters",
@@ -271,7 +271,7 @@ function ProgramsContent() {
       duration: "7 Days",
       participants: "10-14 Students",
       locations: "Beijing, Shanghai",
-
+      rating: { value: 4.8, count: 76 },
       description: "Explore the intersection of business innovation and cultural heritage. Visit global enterprises, contemporary art districts, and historic cultural landmarks.",
       highlights: [
         "Alibaba and JD.com headquarters tours",
@@ -287,7 +287,7 @@ function ProgramsContent() {
       duration: "8 Days",
       participants: "12-15 Students",
       locations: "Shanghai, Hangzhou, Suzhou",
-
+      rating: { value: 5.0, count: 72 },
       description: "Discover China's leadership in renewable energy, electric vehicles, and sustainable urban development. Meet pioneers in green technology.",
       highlights: [
         "BYD electric vehicle factory tour",
@@ -350,6 +350,32 @@ function ProgramsContent() {
                     >
                       {program.title}
                     </h2>
+                    
+                    {/* Rating Display */}
+                    <div className="flex items-center gap-2">
+                      <div className="flex gap-0.5">
+                        {[1, 2, 3, 4, 5].map((star) => (
+                          <svg
+                            key={star}
+                            className={`w-5 h-5 ${
+                              star <= Math.floor(program.rating.value)
+                                ? 'text-rose-gold fill-rose-gold'
+                                : star - 0.5 <= program.rating.value
+                                ? 'text-rose-gold fill-rose-gold'
+                                : 'text-warm-gray/30 fill-warm-gray/30'
+                            }`}
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            strokeWidth="1"
+                          >
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                          </svg>
+                        ))}
+                      </div>
+                      <span className="text-lg font-medium text-charcoal">{program.rating.value}</span>
+                      <span className="text-sm text-warm-gray">({program.rating.count} reviews)</span>
+                    </div>
                     
                     {/* Program Meta */}
                     <div className="grid grid-cols-2 gap-4">

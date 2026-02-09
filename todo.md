@@ -145,3 +145,12 @@
 - [x] 在 Programs 页面为每个 Course Schema 添加 AggregateRating
 - [ ] 使用 Google Rich Results Test 验证 Rating 显示
 
+
+## 星级评分视觉展示和用户评价
+- [x] 在 Home 页面统计数据区域添加星级评分展示（4.9/5 ⭐ 237 reviews）
+- [x] 在 Programs 页面每个项目卡片添加对应星级评分
+- [x] 创建 Testimonials 轮播组件
+- [x] 添加真实用户评价数据（牛津、剑桥、帝国理工学生）
+- [x] 在 Home 页面集成 Testimonials 模块
+- [x] 测试所有新功能
+
