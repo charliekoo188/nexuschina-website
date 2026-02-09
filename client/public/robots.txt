@@ -1,11 +1,18 @@
 # robots.txt for NEXUS CHINA
 
+# Allow all search engines to crawl the site
 User-agent: *
 Allow: /
-
-# Sitemap
-Sitemap: https://nexuschina.com/sitemap.xml
-
-# Disallow admin and API routes
 Disallow: /api/
 Disallow: /admin/
+
+# Crawl-delay for aggressive bots
+User-agent: Baiduspider
+Crawl-delay: 1
+
+User-agent: Yandex
+Crawl-delay: 1
+
+# Sitemap locations
+Sitemap: https://nexuschina.com/sitemap.xml
+Sitemap: https://nexuschina.com/rss.xml

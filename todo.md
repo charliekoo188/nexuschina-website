@@ -109,3 +109,15 @@
 - [x] 创建相关文章推荐组件
 - [x] 在文章页面集成相关文章推荐
 - [x] 测试所有 SEO 优化功能
+
+## SEO 索引加速策略
+- [x] 创建 SEO 索引加速策略文档
+- [x] 优化 robots.txt 确保所有页面可被爬取
+- [x] 添加 Google Search Console 验证文件
+- [x] 添加 Bing Webmaster Tools 验证文件
+- [x] 创建并提交 RSS feed
+- [ ] 优化页面加载速度（Core Web Vitals）
+- [x] 添加 canonical 标签
+- [ ] 优化图片 alt 标签
+- [ ] 添加内部链接结构
+- [x] 创建外部链接建设指南

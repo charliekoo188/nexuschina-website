@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>NEXUS CHINA Insights</title>
+        <link>https://nexuschina.com</link>
+        <description>Exclusive China immersion programs for elite students from Oxford, Cambridge, Imperial, and top UK private schools. Discover cutting-edge technology, world-class enterprises, premier academic institutions, and contemporary culture.</description>
+        <language>en-us</language>
+        <lastBuildDate>Sat, 08 Feb 2026 00:00:00 GMT</lastBuildDate>
+        <atom:link href="https://nexuschina.com/rss.xml" rel="self" type="application/rss+xml"/>
+        
+        <!-- Article 1: China's AI Revolution -->
+        <item>
+            <title>China's AI Revolution: What Western Leaders Need to Know</title>
+            <link>https://nexuschina.com/insights/china-ai-revolution</link>
+            <description>As China surpasses the US in AI patent applications for the third consecutive year, understanding the nuances of Chinese AI development is no longer optional for global business leaders.</description>
+            <pubDate>Sat, 01 Feb 2026 00:00:00 GMT</pubDate>
+            <guid>https://nexuschina.com/insights/china-ai-revolution</guid>
+            <category>Technology</category>
+        </item>
+        
+        <!-- Article 2: China's EV Battery Dominance -->
+        <item>
+            <title>China's EV Battery Dominance: Reshaping Global Auto Industry</title>
+            <link>https://nexuschina.com/insights/china-ev-battery-dominance</link>
+            <description>China controls 80% of global EV battery production capacity. This comprehensive analysis explores how Chinese companies like CATL and BYD are reshaping the global automotive industry.</description>
+            <pubDate>Thu, 15 Jan 2026 00:00:00 GMT</pubDate>
+            <guid>https://nexuschina.com/insights/china-ev-battery-dominance</guid>
+            <category>Sustainability</category>
+        </item>
+        
+        <!-- Article 3: Understanding China's Cultural Soft Power -->
+        <item>
+            <title>Understanding China's Cultural Soft Power in 2026</title>
+            <link>https://nexuschina.com/insights/china-cultural-soft-power-2026</link>
+            <description>From TikTok to gaming, Chinese cultural exports are reshaping global entertainment. This analysis examines how China is building cultural influence through digital platforms and creative industries.</description>
+            <pubDate>Mon, 20 Jan 2026 00:00:00 GMT</pubDate>
+            <guid>https://nexuschina.com/insights/china-cultural-soft-power-2026</guid>
+            <category>Culture</category>
+        </item>
+        
+        <!-- Article 4: Belt and Road Initiative 2.0 -->
+        <item>
+            <title>Belt and Road Initiative 2.0: China's Evolving Global Strategy</title>
+            <link>https://nexuschina.com/insights/belt-road-initiative-2-0</link>
+            <description>As the Belt and Road Initiative enters its second decade, China is shifting from infrastructure-heavy investments to digital connectivity and green development. This analysis explores the implications for global trade and geopolitics.</description>
+            <pubDate>Fri, 10 Jan 2026 00:00:00 GMT</pubDate>
+            <guid>https://nexuschina.com/insights/belt-road-initiative-2-0</guid>
+            <category>Global Affairs</category>
+        </item>
+        
+        <!-- Article 5: China's Quantum Computing Breakthrough -->
+        <item>
+            <title>China's Quantum Computing Breakthrough: Racing Toward Supremacy</title>
+            <link>https://nexuschina.com/insights/quantum-computing-china-breakthrough</link>
+            <description>China's quantum computer "Jiuzhang 3.0" achieves computational speeds 10^24 times faster than classical supercomputers. This breakthrough analysis explores what it means for cryptography, drug discovery, and global tech leadership.</description>
+            <pubDate>Wed, 05 Feb 2024 00:00:00 GMT</pubDate>
+            <guid>https://nexuschina.com/insights/quantum-computing-china-breakthrough</guid>
+            <category>Technology</category>
+        </item>
+        
+        <!-- Article 6: Inside ByteDance -->
+        <item>
+            <title>Inside ByteDance: The Company That Changed Social Media Forever</title>
+            <link>https://nexuschina.com/insights/inside-bytedance</link>
+            <description>ByteDance's TikTok has over 1 billion users worldwide. This exclusive look inside the company reveals the AI-driven recommendation algorithms and organizational culture that made it a global phenomenon.</description>
+            <pubDate>Mon, 15 May 2025 00:00:00 GMT</pubDate>
+            <guid>https://nexuschina.com/insights/inside-bytedance</guid>
+            <category>Technology</category>
+        </item>
+        
+        <!-- Article 7: China's Green Tech Ecosystem -->
+        <item>
+            <title>China's Green Tech Ecosystem: Leading the Sustainability Revolution</title>
+            <link>https://nexuschina.com/insights/china-green-tech-ecosystem</link>
+            <description>China accounts for 40% of global renewable energy investment. This comprehensive analysis explores how Chinese companies are pioneering solar, wind, and battery technologies that are reshaping the global energy landscape.</description>
+            <pubDate>Thu, 10 Apr 2025 00:00:00 GMT</pubDate>
+            <guid>https://nexuschina.com/insights/china-green-tech-ecosystem</guid>
+            <category>Sustainability</category>
+        </item>
+        
+        <!-- Article 8: The Rise of Chinese Biotech -->
+        <item>
+            <title>The Rise of Chinese Biotech: From Copycat to Innovator</title>
+            <link>https://nexuschina.com/insights/rise-chinese-biotech</link>
+            <description>Chinese biotech companies are no longer just copying Western innovations—they're leading in areas like gene therapy and mRNA vaccines. This analysis explores the transformation of China's life sciences sector.</description>
+            <pubDate>Tue, 20 Feb 2024 00:00:00 GMT</pubDate>
+            <guid>https://nexuschina.com/insights/rise-chinese-biotech</guid>
+            <category>Technology</category>
+        </item>
+        
+        <!-- Article 9: Understanding China's Digital Yuan -->
+        <item>
+            <title>Understanding China's Digital Yuan: The Future of Money?</title>
+            <link>https://nexuschina.com/insights/china-digital-yuan</link>
+            <description>China's digital currency (e-CNY) is already used by over 260 million people. This analysis explores how the digital yuan works, its implications for global finance, and what it means for the future of money.</description>
+            <pubDate>Mon, 10 Jun 2024 00:00:00 GMT</pubDate>
+            <guid>https://nexuschina.com/insights/china-digital-yuan</guid>
+            <category>Finance</category>
+        </item>
+        
+        <!-- Article 10: China's Space Program -->
+        <item>
+            <title>China's Space Program: The New Frontier of Competition</title>
+            <link>https://nexuschina.com/insights/china-space-program</link>
+            <description>From Mars rovers to lunar bases, China's space program is advancing rapidly. This analysis examines China's space ambitions and their implications for international cooperation and competition.</description>
+            <pubDate>Fri, 15 Sep 2023 00:00:00 GMT</pubDate>
+            <guid>https://nexuschina.com/insights/china-space-program</guid>
+            <category>Technology</category>
+        </item>
+        
+        <!-- Article 11: Sino-Middle Eastern Partnerships -->
+        <item>
+            <title>Sino-Middle Eastern Partnerships: A New Geopolitical Reality</title>
+            <link>https://nexuschina.com/insights/sino-middle-eastern-partnerships</link>
+            <description>China has become the largest trading partner for most Middle Eastern countries. This analysis explores the economic, political, and strategic dimensions of China's growing influence in the region.</description>
+            <pubDate>Wed, 05 Jul 2023 00:00:00 GMT</pubDate>
+            <guid>https://nexuschina.com/insights/sino-middle-eastern-partnerships</guid>
+            <category>Global Affairs</category>
+        </item>
+    </channel>
+</rss>
