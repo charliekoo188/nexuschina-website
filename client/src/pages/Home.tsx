@@ -81,8 +81,16 @@ export default function Home() {
         data={{
           sameAs: [
             "https://www.linkedin.com/company/nexuschina",
-            "https://twitter.com/nexuschina"
-          ]
+            "https://twitter.com/nexuschina",
+            "https://www.facebook.com/nexuschina"
+          ],
+          contactPoint: {
+            "@type": "ContactPoint",
+            contactType: "Customer Service",
+            email: "info@nexuschina.com"
+          },
+          foundingDate: "2020",
+          slogan: "Experience China's Future of Innovation"
         }} 
       />
       <StructuredData 

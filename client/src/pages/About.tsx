@@ -4,6 +4,7 @@
 
 import ScrollAnimation from "@/components/ScrollAnimation";
 import SEO from "@/components/SEO";
+import StructuredData from "@/components/StructuredData";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Target, Eye, Heart, Award } from "lucide-react";
@@ -40,6 +41,56 @@ export default function About() {
         keywords="about NEXUS CHINA, China education program, UK China exchange"
         ogImage="https://files.manuscdn.com/user_upload_by_module/session_file/310519663326825618/EprelgUyDAbZeZtN.png"
         canonical="https://nexuschina.com/about"
+      />
+      <StructuredData 
+        type="educationalOrganization" 
+        data={{
+          alternateName: "NEXUS CHINA",
+          foundingDate: "2020",
+          numberOfEmployees: {
+            "@type": "QuantitativeValue",
+            value: "10-50"
+          },
+          areaServed: {
+            "@type": "Country",
+            name: "United Kingdom"
+          },
+          audience: {
+            "@type": "EducationalAudience",
+            educationalRole: "student",
+            audienceType: "University students from Oxford, Cambridge, Imperial College and top UK private schools"
+          },
+          hasOfferCatalog: {
+            "@type": "OfferCatalog",
+            name: "China Immersion Programs",
+            itemListElement: [
+              {
+                "@type": "Offer",
+                itemOffered: {
+                  "@type": "Course",
+                  name: "Tech Innovation Immersion",
+                  description: "10-day program visiting ByteDance, Huawei, Tencent"
+                }
+              },
+              {
+                "@type": "Offer",
+                itemOffered: {
+                  "@type": "Course",
+                  name: "Business & Culture Experience",
+                  description: "7-day program exploring business and culture"
+                }
+              },
+              {
+                "@type": "Offer",
+                itemOffered: {
+                  "@type": "Course",
+                  name: "Sustainability & Green Tech",
+                  description: "8-day program on renewable energy and EVs"
+                }
+              }
+            ]
+          }
+        }} 
       />
       <Navbar />
       

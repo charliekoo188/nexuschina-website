@@ -4,6 +4,7 @@
 
 import ScrollAnimation from "@/components/ScrollAnimation";
 import SEO from "@/components/SEO";
+import StructuredData from "@/components/StructuredData";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ArrowRight, Calendar, Users, MapPin, Check } from "lucide-react";
@@ -12,53 +13,204 @@ import { useEffect } from "react";
 
 export default function Programs() {
   useEffect(() => {
-    // Add JSON-LD structured data for Course/Event schema
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.text = JSON.stringify({
+    // Add JSON-LD structured data for multiple Course schemas
+    const programs = [
+      {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": "Tech Innovation Immersion",
+        "description": "10-day program visiting ByteDance, Huawei, Tencent, and AI startups in Beijing, Shenzhen, Hangzhou",
+        "provider": {
+          "@type": "EducationalOrganization",
+          "name": "NEXUS CHINA",
+          "url": "https://nexuschina.com"
+        },
+        "hasCourseInstance": {
+          "@type": "CourseInstance",
+          "courseMode": "onsite",
+          "duration": "P10D",
+          "location": {
+            "@type": "Place",
+            "name": "Beijing, Shenzhen, Hangzhou",
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "CN"
+            }
+          }
+        },
+        "audience": {
+          "@type": "EducationalAudience",
+          "educationalRole": "student",
+          "audienceType": "University students from Oxford, Cambridge, Imperial College"
+        },
+        "educationalLevel": "University",
+        "inLanguage": ["en", "zh"],
+        "coursePrerequisites": "Enrollment at Oxford, Cambridge, Imperial College or top UK private school",
+        "teaches": ["Technology Innovation", "AI and Machine Learning", "Chinese Business Culture", "Tech Entrepreneurship"]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": "Business & Culture Experience",
+        "description": "7-day program exploring business innovation and cultural heritage in Beijing and Shanghai",
+        "provider": {
+          "@type": "EducationalOrganization",
+          "name": "NEXUS CHINA",
+          "url": "https://nexuschina.com"
+        },
+        "hasCourseInstance": {
+          "@type": "CourseInstance",
+          "courseMode": "onsite",
+          "duration": "P7D",
+          "location": {
+            "@type": "Place",
+            "name": "Beijing, Shanghai",
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "CN"
+            }
+          }
+        },
+        "audience": {
+          "@type": "EducationalAudience",
+          "educationalRole": "student",
+          "audienceType": "University students from Oxford, Cambridge, Imperial College"
+        },
+        "educationalLevel": "University",
+        "inLanguage": ["en", "zh"],
+        "coursePrerequisites": "Enrollment at Oxford, Cambridge, Imperial College or top UK private school",
+        "teaches": ["Business Innovation", "Cultural Heritage", "Contemporary Art", "Cross-Cultural Communication"]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": "Sustainability & Green Tech",
+        "description": "8-day program focused on renewable energy, electric vehicles, and sustainable development",
+        "provider": {
+          "@type": "EducationalOrganization",
+          "name": "NEXUS CHINA",
+          "url": "https://nexuschina.com"
+        },
+        "hasCourseInstance": {
+          "@type": "CourseInstance",
+          "courseMode": "onsite",
+          "duration": "P8D",
+          "location": {
+            "@type": "Place",
+            "name": "Shanghai, Hangzhou, Suzhou",
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "CN"
+            }
+          }
+        },
+        "audience": {
+          "@type": "EducationalAudience",
+          "educationalRole": "student",
+          "audienceType": "University students from Oxford, Cambridge, Imperial College"
+        },
+        "educationalLevel": "University",
+        "inLanguage": ["en", "zh"],
+        "coursePrerequisites": "Enrollment at Oxford, Cambridge, Imperial College or top UK private school",
+        "teaches": ["Renewable Energy", "Electric Vehicles", "Sustainable Development", "Green Technology", "Urban Planning"]
+      }
+    ];
+
+    // Add FAQPage Schema
+    const faqSchema = {
       "@context": "https://schema.org",
-      "@type": "Course",
-      "name": "NEXUS CHINA Immersion Programs",
-      "description": "Exclusive China immersion programs for elite UK students from Oxford, Cambridge, and Imperial College. Experience cutting-edge technology, world-class enterprises, and contemporary culture.",
-      "provider": {
-        "@type": "Organization",
-        "name": "NEXUS CHINA",
-        "url": "https://nexuschina.com"
-      },
-      "offers": [
+      "@type": "FAQPage",
+      "mainEntity": [
         {
-          "@type": "Offer",
-          "category": "Tech Innovation Immersion",
-          "description": "10-day program visiting ByteDance, Huawei, Tencent, and AI startups in Beijing, Shenzhen, Hangzhou",
-          "availability": "https://schema.org/InStock"
+          "@type": "Question",
+          "name": "Who can apply for NEXUS CHINA programs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our programs are designed for students from Oxford, Cambridge, Imperial College London, and other top UK universities, as well as students from leading UK private schools (ages 16+). We seek intellectually curious individuals with a genuine interest in understanding contemporary China."
+          }
         },
         {
-          "@type": "Offer",
-          "category": "Business & Culture Experience",
-          "description": "7-day program exploring business innovation and cultural heritage in Beijing and Shanghai",
-          "availability": "https://schema.org/InStock"
+          "@type": "Question",
+          "name": "What is the typical group size?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We maintain small group sizes of 10-16 participants to ensure personalized attention, meaningful interactions, and exclusive access. This intimate setting allows for deeper engagement with hosts and fellow participants."
+          }
         },
         {
-          "@type": "Offer",
-          "category": "Sustainability & Green Tech",
-          "description": "8-day program focused on renewable energy, electric vehicles, and sustainable development",
-          "availability": "https://schema.org/InStock"
+          "@type": "Question",
+          "name": "Do I need to speak Mandarin?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No Mandarin language skills are required. All programs include expert English-speaking guides and translators. However, basic Mandarin phrases are encouraged and we provide a language primer before departure."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the application process?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The application process includes: (1) Submit online application form, (2) Video interview with our team, (3) Review of academic background and interests, (4) Final acceptance notification. We recommend applying 3-4 months before your preferred program date."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is included in the program fee?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The program fee covers all accommodation in 5-star hotels, private transportation, all meals, exclusive enterprise visits, expert guides, networking events, cultural activities, and program materials. International flights and personal expenses are not included."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can programs be customized?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely. We specialize in creating bespoke programs tailored to your specific interests, academic focus, or organizational needs. Whether you're interested in fintech, AI, sustainability, or cultural heritage, we'll design an exclusive experience for your group."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What safety measures are in place?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Participant safety is our top priority. We provide 24/7 on-ground support, comprehensive travel insurance, secure accommodations, vetted transportation, and emergency protocols. Our team has extensive experience managing international programs in China."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When are programs offered?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We offer programs year-round, with peak seasons during university breaks (summer, winter, and spring). Custom programs can be scheduled at your convenience with at least 2 months advance notice."
+          }
         }
-      ],
-      "audience": {
-        "@type": "EducationalAudience",
-        "educationalRole": "student",
-        "audienceType": "University students from Oxford, Cambridge, Imperial College and top UK private schools"
-      },
-      "educationalLevel": "University",
-      "inLanguage": "en",
-      "availableLanguage": ["en", "zh"],
-      "coursePrerequisites": "Enrollment at Oxford, Cambridge, Imperial College or top UK private school"
+      ]
+    };
+
+    const scripts = programs.map((program, index) => {
+      const script = document.createElement('script');
+      script.type = 'application/ld+json';
+      script.id = `course-schema-${index}`;
+      script.text = JSON.stringify(program);
+      document.head.appendChild(script);
+      return script;
     });
-    document.head.appendChild(script);
+
+    // Add FAQ schema
+    const faqScript = document.createElement('script');
+    faqScript.type = 'application/ld+json';
+    faqScript.id = 'faq-schema';
+    faqScript.text = JSON.stringify(faqSchema);
+    document.head.appendChild(faqScript);
+    scripts.push(faqScript);
 
     return () => {
-      document.head.removeChild(script);
+      scripts.forEach(script => {
+        if (script.parentNode) {
+          document.head.removeChild(script);
+        }
+      });
     };
   }, []);
 

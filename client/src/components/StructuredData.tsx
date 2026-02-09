@@ -28,7 +28,7 @@ interface WebsiteSchema {
 }
 
 interface StructuredDataProps {
-  type: "organization" | "website" | "course" | "article";
+  type: "organization" | "website" | "course" | "article" | "educationalOrganization";
   data: any;
 }
 
@@ -89,6 +89,22 @@ export default function StructuredData({ type, data }: StructuredDataProps) {
             "@type": "Organization",
             name: "NEXUS CHINA",
             url: "https://nexuschina.com",
+          },
+          ...data,
+        };
+        break;
+
+      case "educationalOrganization":
+        schema = {
+          "@context": "https://schema.org",
+          "@type": "EducationalOrganization",
+          name: "NEXUS CHINA",
+          url: "https://nexuschina.com",
+          logo: "https://nexuschina.com/logo.png",
+          description: "Elite China immersion programs for UK students from Oxford, Cambridge, Imperial, and top private schools",
+          address: {
+            "@type": "PostalAddress",
+            addressCountry: "CN",
           },
           ...data,
         };

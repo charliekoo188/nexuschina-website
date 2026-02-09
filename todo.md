@@ -130,3 +130,12 @@
 - [x] 优化图片加载性能（懒加载已实现）
 - [x] 优化 CSS/JS 加载
 - [x] 测试 Core Web Vitals
+
+## Schema.org 结构化数据增强
+- [x] 添加 Organization Schema 到首页（公司信息、logo、社交媒体）
+- [x] 添加 WebSite Schema 到首页（网站搜索、名称、URL）
+- [x] 添加 EducationalOrganization Schema 到 About 页面
+- [x] 添加 Course Schema 到 Programs 页面（3个项目）
+- [x] 添加 FAQPage Schema（如果有FAQ内容）
+- [ ] 使用 Google Rich Results Test 测试所有 Schema
+
