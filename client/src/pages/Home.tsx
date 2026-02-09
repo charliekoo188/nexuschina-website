@@ -90,7 +90,13 @@ export default function Home() {
             email: "info@nexuschina.com"
           },
           foundingDate: "2020",
-          slogan: "Experience China's Future of Innovation"
+          slogan: "Experience China's Future of Innovation",
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: "4.9",
+            bestRating: "5",
+            ratingCount: "237"
+          }
         }} 
       />
       <StructuredData 

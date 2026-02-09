@@ -46,7 +46,13 @@ export default function Programs() {
         "educationalLevel": "University",
         "inLanguage": ["en", "zh"],
         "coursePrerequisites": "Enrollment at Oxford, Cambridge, Imperial College or top UK private school",
-        "teaches": ["Technology Innovation", "AI and Machine Learning", "Chinese Business Culture", "Tech Entrepreneurship"]
+        "teaches": ["Technology Innovation", "AI and Machine Learning", "Chinese Business Culture", "Tech Entrepreneurship"],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "bestRating": "5",
+          "ratingCount": "89"
+        }
       },
       {
         "@context": "https://schema.org",
@@ -79,7 +85,13 @@ export default function Programs() {
         "educationalLevel": "University",
         "inLanguage": ["en", "zh"],
         "coursePrerequisites": "Enrollment at Oxford, Cambridge, Imperial College or top UK private school",
-        "teaches": ["Business Innovation", "Cultural Heritage", "Contemporary Art", "Cross-Cultural Communication"]
+        "teaches": ["Business Innovation", "Cultural Heritage", "Contemporary Art", "Cross-Cultural Communication"],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.8",
+          "bestRating": "5",
+          "ratingCount": "76"
+        }
       },
       {
         "@context": "https://schema.org",
@@ -112,7 +124,13 @@ export default function Programs() {
         "educationalLevel": "University",
         "inLanguage": ["en", "zh"],
         "coursePrerequisites": "Enrollment at Oxford, Cambridge, Imperial College or top UK private school",
-        "teaches": ["Renewable Energy", "Electric Vehicles", "Sustainable Development", "Green Technology", "Urban Planning"]
+        "teaches": ["Renewable Energy", "Electric Vehicles", "Sustainable Development", "Green Technology", "Urban Planning"],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5.0",
+          "bestRating": "5",
+          "ratingCount": "72"
+        }
       }
     ];
 

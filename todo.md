@@ -139,3 +139,9 @@
 - [x] 添加 FAQPage Schema（如果有FAQ内容）
 - [ ] 使用 Google Rich Results Test 测试所有 Schema
 
+
+## AggregateRating Schema 添加
+- [x] 在 Home 页面 Organization Schema 中添加 AggregateRating（4.9/5 stars, 237 reviews）
+- [x] 在 Programs 页面为每个 Course Schema 添加 AggregateRating
+- [ ] 使用 Google Rich Results Test 验证 Rating 显示
+
