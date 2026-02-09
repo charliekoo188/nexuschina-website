@@ -11,6 +11,7 @@ import { Calendar, Clock, ArrowLeft, Share2 } from "lucide-react";
 import { Link, useParams } from "wouter";
 import { useEffect } from "react";
 import SocialShare from "@/components/SocialShare";
+import Breadcrumb from "@/components/Breadcrumb";
 
 export default function InsightArticle() {
   const params = useParams();
@@ -824,7 +825,15 @@ export default function InsightArticle() {
       />
       <Navbar />
       
-      <main className="pt-20">
+      {/* Breadcrumb Navigation */}
+      <div className="container mx-auto px-4 pt-24">
+        <Breadcrumb items={[
+          { label: "Insights", href: "/insights" },
+          { label: article?.title || "Article" }
+        ]} />
+      </div>
+      
+      <main className="pt-4">
         {/* Hero Image */}
         <section className="relative h-[60vh] overflow-hidden">
           <img 

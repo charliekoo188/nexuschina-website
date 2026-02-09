@@ -255,7 +255,7 @@ export default function Home() {
             </h2>
             <div className="luxury-line mb-6"></div>
             <p className="text-lg leading-relaxed text-warm-gray mb-8">
-              Join the next generation of global leaders who understand China. Our programs are limited to ensure exclusivity and deep engagement.
+              Join the next generation of global leaders who understand China. Our programs are limited to ensure exclusivity and deep engagement. <Link href="/about" className="text-champagne hover:underline">Learn more about our mission</Link> or <Link href="/insights" className="text-champagne hover:underline">read our latest insights</Link>.
             </p>
             <Link href="/contact">
               <button className="btn-luxury btn-luxury-primary">

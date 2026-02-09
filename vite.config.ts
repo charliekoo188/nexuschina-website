@@ -175,10 +175,29 @@ export default defineConfig({
           'ui': ['framer-motion', '@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu'],
           'i18n': ['i18next', 'react-i18next'],
         },
+        // Optimize asset file names for better caching
+        assetFileNames: (assetInfo) => {
+          const info = assetInfo.name?.split('.') || [];
+          const ext = info[info.length - 1];
+          if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(ext || '')) {
+            return `assets/images/[name]-[hash][extname]`;
+          } else if (/woff2?|ttf|otf|eot/i.test(ext || '')) {
+            return `assets/fonts/[name]-[hash][extname]`;
+          }
+          return `assets/[name]-[hash][extname]`;
+        },
+        chunkFileNames: 'assets/js/[name]-[hash].js',
+        entryFileNames: 'assets/js/[name]-[hash].js',
       },
     },
     chunkSizeWarningLimit: 1000,
     minify: 'esbuild',
+    // Enable CSS code splitting
+    cssCodeSplit: true,
+    // Optimize dependencies
+    target: 'es2015',
+    // Reduce bundle size
+    reportCompressedSize: false,
   },
   server: {
     host: true,
